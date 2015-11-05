@@ -1,0 +1,10 @@
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\Portfolio_Manager.Data.dll.config
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\Portfolio_Manager.Data.dll
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\Portfolio_Manager.Data.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\EntityFramework.dll
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\EntityFramework.xml
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\obj\Debug\Portfolio_Manager.Data.csprojResolveAssemblyReference.cache
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\obj\Debug\Portfolio_Manager.Data.dll
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manager.Data\obj\Debug\Portfolio_Manager.Data.pdb

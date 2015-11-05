@@ -1,0 +1,6 @@
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manger\bin\Debug\Portfolio_Manger.exe.config
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manger\bin\Debug\Portfolio_Manger.exe
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manger\bin\Debug\Portfolio_Manger.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manger\obj\Debug\Portfolio_Manger.csprojResolveAssemblyReference.cache
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manger\obj\Debug\Portfolio_Manger.exe
+D:\Libraries\Documents\Projects\Portfolio_Manger\Portfolio_Manger\obj\Debug\Portfolio_Manger.pdb
