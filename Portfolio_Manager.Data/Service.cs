@@ -8,8 +8,11 @@ namespace Portfolio_Manager.Data
 {
     public class Service
     {
+        public PortfolioAppFactory Factory { get; set; }
+
         public Service()
         {
+            Factory = new PortfolioAppFactory();
         }
 
         public void BuyStock()
@@ -29,7 +32,7 @@ namespace Portfolio_Manager.Data
 
         public void CreateStock(string symbol, double price, string companyName)
         {
-            new StockRepository().CreateStock(symbol, price, companyName);
+            Factory.StockRepository.CreateStock(symbol, price, companyName);
         }
 
         

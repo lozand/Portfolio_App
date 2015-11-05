@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio_Manger.Model
+namespace Portfolio_Manager.Model
 {
     public class Stock
     {

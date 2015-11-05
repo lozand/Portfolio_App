@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutomapperConfig.cs" />
+    <Compile Include="PortfolioAppFactory.cs" />
+    <Compile Include="PortfolioRepository.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="StockRepository.cs" />
     <Compile Include="Portfolio.cs">
@@ -78,9 +81,11 @@
     <Compile Include="TransactionLog.cs">
       <DependentUpon>PortfolioManager.tt</DependentUpon>
     </Compile>
+    <Compile Include="TransactionLogRepository.cs" />
     <Compile Include="User.cs">
       <DependentUpon>PortfolioManager.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="PortfolioManager.edmx">
@@ -109,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portfolio_Manager.Model\Portfolio_Manager.Model.csproj">
+      <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
+      <Name>Portfolio_Manager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

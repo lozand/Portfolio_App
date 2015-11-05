@@ -7,8 +7,8 @@
     <ProjectGuid>{54CF691B-3409-48A1-8CA5-0B174FAD42FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Portfolio_Manger.Model</RootNamespace>
-    <AssemblyName>Portfolio_Manger.Model</AssemblyName>
+    <RootNamespace>Portfolio_Manager.Model</RootNamespace>
+    <AssemblyName>Portfolio_Manager.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

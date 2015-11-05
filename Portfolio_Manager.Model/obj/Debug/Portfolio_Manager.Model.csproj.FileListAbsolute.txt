@@ -1,0 +1,10 @@
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\Portfolio_Manager.Model.dll
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\Portfolio_Manager.Model.pdb
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\mscorlib.dll
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\normidna.nlp
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\normnfc.nlp
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\normnfd.nlp
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\normnfkc.nlp
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\normnfkd.nlp
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.dll
+C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.pdb
