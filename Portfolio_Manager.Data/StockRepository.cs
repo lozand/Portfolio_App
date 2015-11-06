@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Portfolio_Manager.Data
 {
@@ -10,18 +11,19 @@ namespace Portfolio_Manager.Data
     {
         PortfolioAppEntities dbContext;
 
-        public StockRepository()
+        public StockRepository(PortfolioAppEntities context)
         {
-            dbContext = new PortfolioAppEntities();
+            dbContext = context;
         }
-        public void CreateStock(string symbol, double lastPrice, string companyName)
+        public Model.Stock GetStockBySymbol(string symbol)
         {
-            Data.Stock stock = new Data.Stock();
-            stock.Symbol = symbol.ToUpper();
-            stock.LastPrice = lastPrice;
-            stock.CompanyName = companyName;
-            dbContext.Stocks.Add(stock);
+            return dbContext.Stocks.Where(s => s.Symbol == symbol.ToUpper()).Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).FirstOrDefault();
+        }
+        public void CreateStock(Model.Stock entity)
+        {
+            dbContext.Stocks.Add(Mapper.Map<Model.Stock, Data.Stock>(entity));
             dbContext.SaveChanges();
         }
+
     }
 }

@@ -8,3 +8,8 @@ C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\
 C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\bin\Debug\normnfkd.nlp
 C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.dll
 C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.Model\bin\Debug\Portfolio_Manager.Model.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.Model\bin\Debug\Portfolio_Manager.Model.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.csprojResolveAssemblyReference.cache
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.Model\obj\Debug\Portfolio_Manager.Model.pdb

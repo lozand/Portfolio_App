@@ -8,6 +8,8 @@ namespace Portfolio_Manager.Data
 {
     public class PortfolioAppFactory
     {
+        PortfolioAppEntities dbContext = new PortfolioAppEntities();
+
         public StockRepository StockRepository;
         public PortfolioRepository PortfolioRepository;
         public UserRepository UserRepository;
@@ -15,10 +17,10 @@ namespace Portfolio_Manager.Data
 
         public PortfolioAppFactory()
         {
-            StockRepository = new StockRepository();
-            PortfolioRepository = new PortfolioRepository();
-            UserRepository = new UserRepository();
-            TransactionLogRepository = new TransactionLogRepository();
+            StockRepository = new StockRepository(dbContext);
+            PortfolioRepository = new PortfolioRepository(dbContext);
+            UserRepository = new UserRepository(dbContext);
+            TransactionLogRepository = new TransactionLogRepository(dbContext);
         }
     }
 }

@@ -8,9 +8,9 @@ namespace Portfolio_Manager.Model
 {
     public class Stock
     {
-        int Id { get; set; }
-        string Symbol { get; set; }
-        double LastPrice { get; set; }
-        string CompanyName { get; set; }
+        public int Id { get; set; }
+        public string Symbol { get; set; }
+        public double LastPrice { get; set; }
+        public string CompanyName { get; set; }
     }
 }

@@ -32,7 +32,13 @@ namespace Portfolio_Manager.Data
 
         public void CreateStock(string symbol, double price, string companyName)
         {
-            Factory.StockRepository.CreateStock(symbol, price, companyName);
+            Model.Stock stock = new Model.Stock
+            {
+                Symbol = symbol,
+                LastPrice = price,
+                CompanyName = companyName
+            };
+            Factory.StockRepository.CreateStock(stock);
         }
 
         

@@ -33,3 +33,16 @@ C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager\obj\De
 C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager\obj\Debug\Portfolio_Manger.pdb
 C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager\bin\Debug\AutoMapper.dll
 C:\Users\daniel.lozano\Documents\Projects\Portfolio_App\Portfolio_Manager\bin\Debug\AutoMapper.xml
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\Portfolio_Manger.exe
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\Portfolio_Manger.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\AutoMapper.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\EntityFramework.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\EntityFramework.SqlServer.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\Portfolio_Manager.Data.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\Portfolio_Manager.Data.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\AutoMapper.xml
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\EntityFramework.xml
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\EntityFramework.SqlServer.xml
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\obj\Debug\Portfolio_Manager.csprojResolveAssemblyReference.cache
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\Portfolio_Manager.Model.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager\bin\Debug\Portfolio_Manager.Model.pdb
