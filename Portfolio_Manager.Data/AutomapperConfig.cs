@@ -15,6 +15,7 @@ namespace Portfolio_Manager.Data
         public static void SetMappings()
         {
             Mapper.CreateMap<Model.Stock, Data.Stock>();
+            Mapper.CreateMap<Data.Stock, Model.Stock>();
         }
         
     }

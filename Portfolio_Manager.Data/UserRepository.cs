@@ -8,5 +8,11 @@ namespace Portfolio_Manager.Data
 {
     public class UserRepository
     {
+        PortfolioAppEntities dbContext;
+
+        public UserRepository(PortfolioAppEntities context)
+        {
+            dbContext = context;
+        }
     }
 }

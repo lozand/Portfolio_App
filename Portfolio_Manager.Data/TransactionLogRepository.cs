@@ -8,5 +8,11 @@ namespace Portfolio_Manager.Data
 {
     public class TransactionLogRepository
     {
+        PortfolioAppEntities dbContext;
+
+        public TransactionLogRepository(PortfolioAppEntities context)
+        {
+            dbContext = context;
+        }
     }
 }
