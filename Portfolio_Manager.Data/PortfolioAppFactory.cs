@@ -17,6 +17,7 @@ namespace Portfolio_Manager.Data
 
         public PortfolioAppFactory()
         {
+            AutomapperConfig.SetMappings();
             StockRepository = new StockRepository(dbContext);
             PortfolioRepository = new PortfolioRepository(dbContext);
             UserRepository = new UserRepository(dbContext);

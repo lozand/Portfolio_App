@@ -11,11 +11,15 @@ namespace Portfolio_Manager
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Please enter your username to continue");
+            string userName = Console.ReadLine();
+
+            Data.Service service = new Data.Service(userName);
+
             Console.WriteLine("Enter Command");
             string message = Console.ReadLine();
 
             string[] input = message.Split(' ');
-            Data.Service service = new Data.Service();
             string command = input[0];
 
             while (command != "exit")
@@ -24,12 +28,19 @@ namespace Portfolio_Manager
                 {
                     case "help":
                         Console.WriteLine("Here are a list of commands you can use");
+                        Console.WriteLine("cstock <symbol> <price> <company_name> - create a stock");
+                        Console.WriteLine("bstock - buy a stock");
+                        Console.WriteLine("sstock - sell a stock");
+                        Console.WriteLine("vportfolio - get the value of your portfolio");
+                        Console.WriteLine("lportfolio - list your portfolio");
+                        Console.WriteLine("exit - ... to exit");
                         break;
                     case "cstock":
                         Console.WriteLine("You are trying to create a stock");
                         try
                         {
                             service.CreateStock(input[1], double.Parse(input[2]), input[3]);
+                            Console.WriteLine("Stock Creation Successful!!");
                         }
                         catch
                         {
@@ -37,7 +48,13 @@ namespace Portfolio_Manager
                         }
                         break;
                     case "bstock":
-                        Console.WriteLine("You are trying to buy a stock, good job!");
+                        try {
+                            Console.WriteLine("You are trying to buy a stock, good job!");
+                        }
+                        catch
+                        {
+                            Console.WriteLine("This stock probably doesn't exist. You should try cstock to create it first. Just a thought");
+                        }
                         break;
                     case "sstock":
                         Console.WriteLine("You are trying to seel a stock");

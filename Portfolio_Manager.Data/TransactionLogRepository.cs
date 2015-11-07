@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,8 +21,16 @@ namespace Portfolio_Manager.Data
             return dbContext.TransactionLogs.Select(p => Mapper.Map<Data.TransactionLog, Model.TransactionLog>(p)).ToList();
         }
 
-        public void CreateTransactionLogs(Model.TransactionLog entity)
+        public void CreateTransactionLogs(Model.Portfolio portfolio, Model.Stock stock, bool purchased)
         {
+            Model.TransactionLog entity = new Model.TransactionLog
+            {
+                Price = stock.LastPrice,
+                StockId = stock.Id,
+                Purchased = purchased,
+                Quantity = portfolio.Quantity,
+                TransactionDate = DateTime.Now
+            };
             dbContext.TransactionLogs.Add(Mapper.Map<Model.TransactionLog, Data.TransactionLog>(entity));
             dbContext.SaveChanges();
         }

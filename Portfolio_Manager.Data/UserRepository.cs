@@ -19,7 +19,7 @@ namespace Portfolio_Manager.Data
         #region Basic Crud Methods
         public List<Model.User> GetUsers()
         {
-            return dbContext.Users.Select(p => Mapper.Map<Data.User, Model.User>(p)).ToList();
+            return dbContext.Users.ToList().Select(p => Mapper.Map<Data.User, Model.User>(p)).ToList();
         }
 
         public void CreateUser(Model.User entity)
