@@ -8,8 +8,8 @@ namespace Portfolio_Manager.Model
 {
     public class Portfolio
     {
-        int StockId { get; set; }
-        int UserId { get; set; }
-        int Quantity { get; set; }
+        public int StockId { get; set; }
+        public int UserId { get; set; }
+        public int Quantity { get; set; }
     }
 }

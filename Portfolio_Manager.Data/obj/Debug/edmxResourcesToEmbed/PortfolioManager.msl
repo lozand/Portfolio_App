@@ -14,7 +14,7 @@
     <EntitySetMapping Name="TransactionLogs">
       <EntityTypeMapping TypeName="PortfolioAppModel.TransactionLog">
         <MappingFragment StoreEntitySet="TransactionLog">
-          <ScalarProperty Name="TransactioNDate" ColumnName="TransactioNDate" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
           <ScalarProperty Name="Purchased" ColumnName="Purchased" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />

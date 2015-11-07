@@ -27,7 +27,7 @@
     <Property Name="Quantity" Type="int" />
     <Property Name="Price" Type="float" />
     <Property Name="Purchased" Type="bit" />
-    <Property Name="TransactioNDate" Type="datetime" />
+    <Property Name="TransactionDate" Type="datetime" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

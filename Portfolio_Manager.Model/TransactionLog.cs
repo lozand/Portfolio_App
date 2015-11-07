@@ -8,11 +8,11 @@ namespace Portfolio_Manager.Model
 {
     public class TransactionLog
     {
-        int Id { get; set; }
-        int StockId { get; set; }
-        int Quantity { get; set; }
-        double Price { get; set; }
-        bool Purchased { get; set; }
-        DateTime TransactionDate { get; set; }
+        public int Id { get; set; }
+        public int StockId { get; set; }
+        public int Quantity { get; set; }
+        public double Price { get; set; }
+        public bool Purchased { get; set; }
+        public DateTime TransactionDate { get; set; }
     }
 }

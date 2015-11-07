@@ -32,7 +32,7 @@
           <Property Name="Quantity" Type="int" />
           <Property Name="Price" Type="float" />
           <Property Name="Purchased" Type="bit" />
-          <Property Name="TransactioNDate" Type="datetime" />
+          <Property Name="TransactionDate" Type="datetime" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -137,7 +137,7 @@
           <Property Name="Quantity" Type="Int32" />
           <Property Name="Price" Type="Double" />
           <Property Name="Purchased" Type="Boolean" />
-          <Property Name="TransactioNDate" Type="DateTime" Precision="3" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Stock" Relationship="PortfolioAppModel.FK_TransactionLog_Stock" FromRole="TransactionLog" ToRole="Stock" />
         </EntityType>
         <Association Name="FK_TransactionLog_Stock">
@@ -214,7 +214,7 @@
           <EntitySetMapping Name="TransactionLogs">
             <EntityTypeMapping TypeName="PortfolioAppModel.TransactionLog">
               <MappingFragment StoreEntitySet="TransactionLog">
-                <ScalarProperty Name="TransactioNDate" ColumnName="TransactioNDate" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
                 <ScalarProperty Name="Purchased" ColumnName="Purchased" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
