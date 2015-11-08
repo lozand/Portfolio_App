@@ -76,6 +76,10 @@
       <Project>{b06ee736-2c3f-4342-b547-389ed5d7aa25}</Project>
       <Name>Portfolio_Manager.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Portfolio_Manager.Model\Portfolio_Manager.Model.csproj">
+      <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
+      <Name>Portfolio_Manager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
