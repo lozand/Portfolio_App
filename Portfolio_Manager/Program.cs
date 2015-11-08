@@ -1,9 +1,6 @@
 ﻿using System;
+using Portfolio_Manager.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace Portfolio_Manager
 {
@@ -48,8 +45,10 @@ namespace Portfolio_Manager
                         }
                         break;
                     case "bstock":
-                        try {
-                            Console.WriteLine("You are trying to buy a stock, good job!");
+                        try
+                        {
+                            service.BuyStock(input[1], int.Parse(input[2]));
+                            Console.WriteLine("You are bought a stock; good job!");
                         }
                         catch
                         {
@@ -57,17 +56,36 @@ namespace Portfolio_Manager
                         }
                         break;
                     case "sstock":
-                        Console.WriteLine("You are trying to seel a stock");
+                        try
+                        {
+                            service.SellStock(input[1], int.Parse(input[2]));
+                            Console.WriteLine("You sold a stock; good job!");
+                        }
+                        catch
+                        {
+                            Console.WriteLine("This stock probably doesn't exist. You should try cstock to create it first. Just a thought");
+                        }
                         break;
                     case "portfolio":
-                        Console.WriteLine("You tried to list your portfolio! Nice!");
+                        break;
+                    case "vportfolio":
+                        try
+                        {
+                            double value = service.GetPortfolioValue();
+                            Console.WriteLine(String.Format("The value of your portfolio is ${0}", value.ToString()));
+                        }
+                        catch
+                        {
+                            Console.WriteLine("An error happened when trying to get your portfolio value. Stop it!");
+                        }
                         break;
                     default:
                         Console.WriteLine("No command is like that. Type help for help, exit to exit or go away");
                         break;
                 }
-
-                command = Console.ReadLine().Split(' ')[0];
+                message = Console.ReadLine();
+                input = message.Split(' ');
+                command = input[0];
             }
 
             //Console.WriteLine(String.Format("You entered, Symbol: {0}, Last Price: {1}, CompanyName: {2}", symbol.ToUpper(), lastprice.ToString(), companyName));

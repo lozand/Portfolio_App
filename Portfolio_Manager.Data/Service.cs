@@ -26,7 +26,7 @@ namespace Portfolio_Manager.Data
                 UserId = UserId,
                 Quantity = quantity
             };
-            Factory.PortfolioRepository.CreatePortfolioEntry(portfolio);
+            Factory.PortfolioRepository.BuyPortfolioEntry(portfolio);
             Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, true);
         }
 
@@ -43,14 +43,14 @@ namespace Portfolio_Manager.Data
             Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, false);
         }
 
-        public List<Portfolio> GetPortfolio()
+        public List<Model.Portfolio> GetPortfolio()
         {
-            return new List<Portfolio>();
+            return Factory.PortfolioRepository.GetPortfoio();
         }
 
-        public float GetPortfolioValue()
+        public double GetPortfolioValue()
         {
-            return 5.0f;
+            return Factory.PortfolioRepository.GetPortfolioValue(UserId);
         }
 
         public void CreateStock(string symbol, double price, string companyName)

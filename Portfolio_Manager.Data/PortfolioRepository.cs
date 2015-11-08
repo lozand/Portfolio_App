@@ -41,5 +41,32 @@ namespace Portfolio_Manager.Data
             dbContext.SaveChanges();
         }
         #endregion  
+
+        public double GetPortfolioValue(int userId)
+        {
+            var portfolio = dbContext.Portfolios.Where(p => p.UserId == userId);
+            var sum = portfolio.Sum(p => p.Stock.LastPrice * p.Quantity);
+
+            if (sum != null)
+            {
+                return sum.Value;
+            }
+            return 0;
+        }
+
+        public void BuyPortfolioEntry(Model.Portfolio entity)
+        {
+            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.StockId).FirstOrDefault();
+            if(existingRecord == null)
+            {
+                CreatePortfolioEntry(entity);
+            }
+            else
+            {
+                entity.Quantity += existingRecord.Quantity.Value;
+                UpdatePortfolioQuantity(entity);
+            }
+            
+        }
     }
 }
