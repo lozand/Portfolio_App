@@ -40,6 +40,7 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="CashValue" Type="float" />
         </EntityType>
         <Association Name="FK_Portfolio_Stock">
           <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
@@ -170,6 +171,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Portfolios" Relationship="PortfolioAppModel.FK_Portfolio_User" FromRole="User" ToRole="Portfolio" />
+          <Property Name="CashValue" Type="Double" />
         </EntityType>
         <Association Name="FK_Portfolio_Stock">
           <End Type="PortfolioAppModel.Stock" Role="Stock" Multiplicity="1" />
@@ -235,6 +237,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="PortfolioAppModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="CashValue" ColumnName="CashValue" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>

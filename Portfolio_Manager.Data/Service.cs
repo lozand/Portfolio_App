@@ -26,8 +26,19 @@ namespace Portfolio_Manager.Data
                 UserId = UserId,
                 Quantity = quantity
             };
-            Factory.PortfolioRepository.BuyPortfolioEntry(portfolio);
-            Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, true);
+            var cash = Factory.UserRepository.GetCashValueByUserId(UserId);
+            if(cash >= quantity * stock.LastPrice)
+            {
+                var moneyToRemove = quantity * stock.LastPrice;
+                Factory.PortfolioRepository.BuyPortfolioEntry(portfolio);
+                Factory.UserRepository.UpdateCashValue(UserId, -1 * moneyToRemove);
+                Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, true);
+            }
+            else
+            {
+                //user does not have enough money to make this purchase
+                //we should probably have some type of return code. 
+            }
         }
 
         public void SellStock(string symbol, int quantity)
@@ -39,7 +50,9 @@ namespace Portfolio_Manager.Data
                 UserId = UserId,
                 Quantity = quantity
             };
-            Factory.PortfolioRepository.DeletePortfolioEntry(UserId, portfolio.StockId);
+            var moneyToAdd = quantity * stock.LastPrice;
+            Factory.PortfolioRepository.SellPortfolioEntry(portfolio);
+            Factory.UserRepository.UpdateCashValue(UserId, moneyToAdd);
             Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, false);
         }
 

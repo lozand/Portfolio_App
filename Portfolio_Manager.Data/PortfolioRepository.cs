@@ -68,5 +68,25 @@ namespace Portfolio_Manager.Data
             }
             
         }
+
+        public void SellPortfolioEntry(Model.Portfolio entity)
+        {
+            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.StockId).FirstOrDefault();
+            if(existingRecord == null)
+            {
+                //user tries to sell a stock that he/she doesn't own
+                return;
+            }
+            if(existingRecord.Quantity > entity.Quantity)
+            {
+                entity.Quantity -= existingRecord.Quantity.Value;
+                UpdatePortfolioQuantity(entity);
+            }
+            else if(existingRecord.Quantity <= entity.Quantity)
+            {
+                // if a user tries to sell more than he/she owns, we'll just sell as much as they have.
+                DeletePortfolioEntry(entity.UserId, entity.StockId);
+            }
+        }
     }
 }

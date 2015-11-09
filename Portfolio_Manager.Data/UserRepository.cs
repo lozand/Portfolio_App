@@ -44,5 +44,23 @@ namespace Portfolio_Manager.Data
             dbContext.SaveChanges();
         }
         #endregion 
+
+        public double GetCashValueByUserId(int userId)
+        {
+            var user = dbContext.Users.Where(s => s.ID == userId).FirstOrDefault();
+            if(user == null)
+            {
+                return 0;
+            }
+            return user.CashValue.Value;
+        }
+
+        public void UpdateCashValue(int userId, double value)
+        {
+            var user = dbContext.Users.ToList().Where(s => s.ID == userId).Select(Mapper.Map<User, Model.User>).FirstOrDefault();
+            user.CashValue += value;
+
+            UpdateUser(user);
+        }
     }
 }

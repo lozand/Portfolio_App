@@ -48,7 +48,8 @@ namespace Portfolio_Manager.Data
 
         public Model.Stock GetStockBySymbol(string symbol)
         {
-            try {
+            try
+            {
                 return dbContext.Stocks.ToList().Where(s => s.Symbol == symbol.ToUpper()).Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).FirstOrDefault();
             }
             catch(Exception ex)

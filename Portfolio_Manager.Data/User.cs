@@ -22,6 +22,7 @@ namespace Portfolio_Manager.Data
     
         public int ID { get; set; }
         public string Name { get; set; }
+        public Nullable<double> CashValue { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Portfolio> Portfolios { get; set; }
