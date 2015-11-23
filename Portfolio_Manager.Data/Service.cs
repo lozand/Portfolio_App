@@ -55,7 +55,7 @@ namespace Portfolio_Manager.Data
             Factory.UserRepository.UpdateCashValue(UserId, moneyToAdd);
             Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, false);
         }
-
+        
         public List<Model.Portfolio> GetPortfolio()
         {
             return Factory.PortfolioRepository.GetPortfoio();
