@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager.Model", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UI", "Portfolio.UI\Portfolio.UI.csproj", "{BE37F004-6590-4736-8341-3F157E81522E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager.WebForm", "Portfolio_Manager.WebForm\Portfolio_Manager.WebForm.csproj", "{AB2BCB8D-F3DF-4B4A-ABA1-922BDFBA7B7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BE37F004-6590-4736-8341-3F157E81522E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE37F004-6590-4736-8341-3F157E81522E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE37F004-6590-4736-8341-3F157E81522E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2BCB8D-F3DF-4B4A-ABA1-922BDFBA7B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2BCB8D-F3DF-4B4A-ABA1-922BDFBA7B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2BCB8D-F3DF-4B4A-ABA1-922BDFBA7B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2BCB8D-F3DF-4B4A-ABA1-922BDFBA7B7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

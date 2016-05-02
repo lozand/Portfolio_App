@@ -1,0 +1,10 @@
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\bin\Debug\Portfolio_Manager.WebForm.exe.config
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\bin\Debug\Portfolio_Manager.WebForm.exe
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\bin\Debug\Portfolio_Manager.WebForm.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.csprojResolveAssemblyReference.cache
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.Main.resources
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.Properties.Resources.resources
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.csproj.GenerateResource.Cache
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.exe
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Portfolio_Manager.WebForm\obj\Debug\Portfolio_Manager.WebForm.AddStock.resources
