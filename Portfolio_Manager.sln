@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager.Data", "P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager.Model", "Portfolio_Manager.Model\Portfolio_Manager.Model.csproj", "{54CF691B-3409-48A1-8CA5-0B174FAD42FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UI", "Portfolio.UI\Portfolio.UI.csproj", "{BE37F004-6590-4736-8341-3F157E81522E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{54CF691B-3409-48A1-8CA5-0B174FAD42FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54CF691B-3409-48A1-8CA5-0B174FAD42FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54CF691B-3409-48A1-8CA5-0B174FAD42FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE37F004-6590-4736-8341-3F157E81522E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE37F004-6590-4736-8341-3F157E81522E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE37F004-6590-4736-8341-3F157E81522E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE37F004-6590-4736-8341-3F157E81522E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
