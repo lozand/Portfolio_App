@@ -26,8 +26,8 @@ namespace Portfolio_Manager
                     case "help":
                         Console.WriteLine("Here are a list of commands you can use");
                         Console.WriteLine("cstock <symbol> <price> <company_name> - create a stock");
-                        Console.WriteLine("bstock - buy a stock");
-                        Console.WriteLine("sstock - sell a stock");
+                        Console.WriteLine("bstock <symbol> <quantity> - buy a stock");
+                        Console.WriteLine("sstock <symbol> <quantity> - sell a stock");
                         Console.WriteLine("vportfolio - get the value of your portfolio");
                         Console.WriteLine("lportfolio - list your portfolio");
                         Console.WriteLine("exit - ... to exit");
