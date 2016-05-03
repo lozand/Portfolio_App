@@ -27,7 +27,10 @@ namespace Portfolio.UI
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/appscript").Include("~/Scripts/app/app.js", "~/Scripts/app/app.home.js"));
+            bundles.Add(new ScriptBundle("~/bundles/appscript").Include(
+                "~/Scripts/app/app.about.js",
+                "~/Scripts/app/app.home.js", 
+                "~/Scripts/app/app.js"));
         }
     }
 }
