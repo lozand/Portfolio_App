@@ -2,11 +2,11 @@
 
 app.home = {
     index: function () {
+        app.home.bindControls();
     },
-    loadButtons: function () {
+    bindControls: function () {
         $('.js-say-hi').on('click', function (e) {
             e.preventDefault();
-            
         });
     }
 };

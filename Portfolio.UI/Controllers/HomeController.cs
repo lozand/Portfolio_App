@@ -26,5 +26,10 @@ namespace Portfolio.UI.Controllers
 
             return View();
         }
+
+        public string GetMe()
+        {
+            return "you got me";
+        }
     }
 }

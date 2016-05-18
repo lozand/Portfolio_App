@@ -146,6 +146,7 @@
     <Content Include="Scripts\app\app.about.js" />
     <Content Include="Scripts\app\app.home.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\app.service.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
