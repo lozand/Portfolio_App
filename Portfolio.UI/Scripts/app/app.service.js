@@ -2,11 +2,18 @@
 
 app.service = {
     _urls: {
-        getMe: '/Home/GetMe'
+        getMe: '/Home/GetMe',
+        getStocks: '/Stock/Get'
     },
     getMe: function (data, isAsync, callback) {
+        app.service.callController(data, isAsync, callback, app.service._urls.getMe);
+    },
+    getStocks: function (data, isAsync, callback) {
+        app.service.callController(data, isAsync, callback, app.service._urls.getStocks);
+    },
+    callController: function (data, isAsync, callback, url) {
         $.ajax({
-            url: app.service._urls.getMe,
+            url: url,
             async: isAsync,
             data: data
         }).then(function (data) {

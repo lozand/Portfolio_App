@@ -30,6 +30,8 @@ namespace Portfolio.UI
             bundles.Add(new ScriptBundle("~/bundles/appscript").Include(
                 "~/Scripts/app/app.service.js",
                 "~/Scripts/app/app.about.js",
+                "~/Scripts/app/app.stock.js",
+                //"~/Scripts/app/app.about.js",
                 "~/Scripts/app/app.home.js",
                 "~/Scripts/app/app.js"));
         }

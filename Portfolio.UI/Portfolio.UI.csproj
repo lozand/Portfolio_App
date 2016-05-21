@@ -130,6 +130,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\StockController.cs" />
+    <Compile Include="Controllers\PortfolioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -147,6 +149,7 @@
     <Content Include="Scripts\app\app.home.js" />
     <Content Include="Scripts\app\app.js" />
     <Content Include="Scripts\app\app.service.js" />
+    <Content Include="Scripts\app\app.stock.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -175,6 +178,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Stock\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -187,6 +192,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portfolio_Manager.Data\Portfolio_Manager.Data.csproj">
+      <Project>{b06ee736-2c3f-4342-b547-389ed5d7aa25}</Project>
+      <Name>Portfolio_Manager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Portfolio_Manager.Model\Portfolio_Manager.Model.csproj">
+      <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
+      <Name>Portfolio_Manager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
