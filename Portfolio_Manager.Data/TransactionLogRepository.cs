@@ -26,7 +26,7 @@ namespace Portfolio_Manager.Data
             Model.TransactionLog entity = new Model.TransactionLog
             {
                 Price = stock.LastPrice,
-                StockId = stock.Id,
+                StockId = stock.ID,
                 Purchased = purchased,
                 Quantity = portfolio.Quantity,
                 TransactionDate = DateTime.Now

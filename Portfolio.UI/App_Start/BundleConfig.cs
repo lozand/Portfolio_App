@@ -31,6 +31,7 @@ namespace Portfolio.UI
                 "~/Scripts/app/app.service.js",
                 "~/Scripts/app/app.about.js",
                 "~/Scripts/app/app.stock.js",
+                "~/Scripts/lodash.js",
                 //"~/Scripts/app/app.about.js",
                 "~/Scripts/app/app.home.js",
                 "~/Scripts/app/app.js"));

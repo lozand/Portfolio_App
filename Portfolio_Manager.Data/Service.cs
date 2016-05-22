@@ -22,7 +22,7 @@ namespace Portfolio_Manager.Data
             var stock = Factory.StockRepository.GetStockBySymbol(symbol);
             Model.Portfolio portfolio = new Model.Portfolio
             {
-                StockId = stock.Id,
+                StockId = stock.ID,
                 UserId = UserId,
                 Quantity = quantity
             };
@@ -46,7 +46,7 @@ namespace Portfolio_Manager.Data
             var stock = Factory.StockRepository.GetStockBySymbol(symbol);
             Model.Portfolio portfolio = new Model.Portfolio
             {
-                StockId = stock.Id,
+                StockId = stock.ID,
                 UserId = UserId,
                 Quantity = quantity
             };

@@ -11,11 +11,11 @@ namespace Portfolio.UI.Controllers
 {
     public class StockController : Controller
     {
-        StockRepository _repository;
+        PortfolioAppFactory _factory;
 
         public StockController()
         {
-            _repository = new StockRepository(new PortfolioAppEntities());
+            _factory = new PortfolioAppFactory();
         }
 
         public ActionResult Index()
@@ -23,9 +23,9 @@ namespace Portfolio.UI.Controllers
             return View();
         }
 
-        public List<Stock> Get()
+        public JsonResult Get()
         {
-            return _repository.GetStocks();
+            return Json(_factory.StockRepository.GetStocks(), JsonRequestBehavior.AllowGet);
         }
     }
 }

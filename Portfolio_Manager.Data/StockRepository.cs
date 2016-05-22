@@ -18,7 +18,7 @@ namespace Portfolio_Manager.Data
         #region Basic Crud Methods
         public List<Model.Stock> GetStocks()
         {
-            return dbContext.Stocks.Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).ToList();
+            return dbContext.Stocks.ToList().Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).ToList();
         }
 
         public void CreateStock(Model.Stock entity)
@@ -29,7 +29,7 @@ namespace Portfolio_Manager.Data
 
         public void UpdateStock(Model.Stock entity)
         {
-            Stock dbStock = dbContext.Stocks.Where(s => s.ID == entity.Id).FirstOrDefault();
+            Stock dbStock = dbContext.Stocks.Where(s => s.ID == entity.ID).FirstOrDefault();
 
             dbStock.LastPrice = entity.LastPrice;
             dbStock.Symbol = entity.Symbol;

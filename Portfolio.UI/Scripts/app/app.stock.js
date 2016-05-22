@@ -10,6 +10,11 @@ app.stock = {
         });
     },
     getStocksCallback: function (data) {
-        $('.display-stock')[0].innerHTML = data;
+        var returnstring = ''
+        //for (var i = 0; i < data.length; i++) {
+        //    returnstring += data[i].Symbol + ', ';
+        //}
+        returnstring = _.map(data, 'Symbol').join(',');
+        $('.display-stock')[0].innerHTML = returnstring;
     }
 };
