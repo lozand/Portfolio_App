@@ -25,16 +25,20 @@ namespace Portfolio.UI
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/toastr.css",
+                      "~/Content/toastr.less",
+                      "~/Content/toastr.scss",
                       "~/Content/site.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/appscript").Include(
-                "~/Scripts/app/app.service.js",
-                "~/Scripts/app/app.about.js",
-                "~/Scripts/app/app.stock.js",
-                "~/Scripts/lodash.js",
-                //"~/Scripts/app/app.about.js",
-                "~/Scripts/app/app.home.js",
-                "~/Scripts/app/app.js"));
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                "~/Scripts/knockout-3.4.0.debug.js",
+                "~/Scripts/knockout-3.4.0.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appscript").IncludeDirectory("~/Scripts/app", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/thirdparty").Include(
+                "~/Scripts/toastr.min.js",
+                "~/Scripts/lodash.js"));
         }
     }
 }

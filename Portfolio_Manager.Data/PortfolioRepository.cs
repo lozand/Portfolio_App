@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
+using Portfolio_Manager.Model;
 
 
 namespace Portfolio_Manager.Data

@@ -2,9 +2,29 @@
     ViewBag.Title = "Stock";
 }
 <div id="stock" class="content-container">
-    <h2>@ViewBag.Title.</h2>
+    <h2>@ViewBag.Title</h2>
     <h3>@ViewBag.Message</h3>
-
-    <button class="get-stock">Press me to get stocks</button>
-    <label class="display-stock"></label>
+    <br />
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Stock</th>
+                    <th>Symbol</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: stock">
+                <tr>
+                    <td data-bind="text: ID"></td>
+                    <td data-bind="text: Symbol"></td>
+                    <td data-bind="text: CompanyName"></td>
+                    <td data-bind="text: LastPrice"></td>
+                    <td><a class="link-button" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>
+                    <!--  href="~/Views/Stock/Edit.cshtml"-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
