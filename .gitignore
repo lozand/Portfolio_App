@@ -1,0 +1,14 @@
+*.dll
+*.pdb
+*.cache
+Portfolio_Manager/bin/Debug/EntityFramework.xml
+Platform.xml
+Portfolio.UI/bin/
+Portfolio.UI/obj/
+Portfolio_Manager.Model/bin
+Portfolio_Manager.Model/obj
+Portfolio_Manager.WebForm/bin
+Portfolio_Manager.WebForm/obj
+Portfolio_Manager/bin
+Portfolio_Manager/obj
+Portfolio_Manager.Data/bin/Debug/Portfolio_Manager.Data.dll
