@@ -12,8 +12,9 @@ app.portfolio = {
         app.service.getPortfolio(getPortfolioCallback);
 
         function getPortfolioCallback(data) {
-            if (!data) {
-                message.error();
+            if (!data || data.StatusCode === 500) {
+                var msg = data.StatusDescription;
+                message.error(msg);
             }
             else {
                 app.portfolio.portfolio(data);

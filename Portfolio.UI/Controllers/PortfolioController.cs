@@ -44,7 +44,7 @@ namespace Portfolio.UI.Controllers
                 }
                 return Json(vm, JsonRequestBehavior.AllowGet);
             }
-            return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "User was not signed in"), JsonRequestBehavior.AllowGet);
+            return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "You need to be signed in to use this page"), JsonRequestBehavior.AllowGet);
         }
     }
 }
