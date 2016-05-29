@@ -10,6 +10,7 @@
     <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TransactionLogs" Relationship="PortfolioAppModel.FK_TransactionLog_Stock" FromRole="Stock" ToRole="TransactionLog" />
     <NavigationProperty Name="Portfolios" Relationship="PortfolioAppModel.FK_Portfolio_Stock" FromRole="Stock" ToRole="Portfolio" />
+    <NavigationProperty Name="StockHistories" Relationship="PortfolioAppModel.FK_StockHistory_Stock" FromRole="Stock" ToRole="StockHistory" />
   </EntityType>
   <EntityContainer Name="PortfolioAppEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Stocks" EntityType="Self.Stock" />
@@ -27,6 +28,12 @@
     <AssociationSet Name="FK_Portfolio_User" Association="PortfolioAppModel.FK_Portfolio_User">
       <End Role="User" EntitySet="Users" />
       <End Role="Portfolio" EntitySet="Portfolios" />
+    </AssociationSet>
+    <EntitySet Name="StockHistories" EntityType="PortfolioAppModel.StockHistory" />
+    <EntitySet Name="v_CurrentPrices" EntityType="PortfolioAppModel.v_CurrentPrices" />
+    <AssociationSet Name="FK_StockHistory_Stock" Association="PortfolioAppModel.FK_StockHistory_Stock">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="StockHistory" EntitySet="StockHistories" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="TransactionLog">
@@ -94,6 +101,38 @@
       </Principal>
       <Dependent Role="Portfolio">
         <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="StockHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="ObservationTime" Type="DateTime" Precision="3" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="IsEod" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Stock" Relationship="PortfolioAppModel.FK_StockHistory_Stock" FromRole="StockHistory" ToRole="Stock" />
+  </EntityType>
+  <EntityType Name="v_CurrentPrices">
+    <Key>
+      <PropertyRef Name="StockId" />
+    </Key>
+    <Property Name="StockId" Type="Int32" Nullable="false" />
+    <Property Name="Symbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentPrice" Type="Double" />
+  </EntityType>
+  <Association Name="FK_StockHistory_Stock">
+    <End Type="PortfolioAppModel.Stock" Role="Stock" Multiplicity="1" />
+    <End Type="PortfolioAppModel.StockHistory" Role="StockHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StockHistory">
+        <PropertyRef Name="StockId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

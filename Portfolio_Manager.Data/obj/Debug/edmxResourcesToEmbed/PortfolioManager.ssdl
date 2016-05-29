@@ -18,6 +18,16 @@
     <Property Name="LastPrice" Type="float" />
     <Property Name="CompanyName" Type="nvarchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="StockHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StockId" Type="int" Nullable="false" />
+    <Property Name="ObservationTime" Type="datetime" />
+    <Property Name="Price" Type="float" />
+    <Property Name="IsEod" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="TransactionLog">
     <Key>
       <PropertyRef Name="Id" />
@@ -36,6 +46,17 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" />
     <Property Name="CashValue" Type="float" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PortfolioApp.dbo.v_CurrentPrices' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="v_CurrentPrices">
+    <Key>
+      <PropertyRef Name="StockId" />
+    </Key>
+    <Property Name="StockId" Type="int" Nullable="false" />
+    <Property Name="Symbol" Type="nvarchar" MaxLength="10" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CurrentPrice" Type="float" />
   </EntityType>
   <Association Name="FK_Portfolio_Stock">
     <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
@@ -61,6 +82,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_StockHistory_Stock">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+    <End Role="StockHistory" Type="Self.StockHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="StockHistory">
+        <PropertyRef Name="StockId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TransactionLog_Stock">
     <End Role="Stock" Type="Self.Stock" Multiplicity="0..1" />
     <End Role="TransactionLog" Type="Self.TransactionLog" Multiplicity="*" />
@@ -76,8 +109,17 @@
   <EntityContainer Name="PortfolioAppModelStoreContainer">
     <EntitySet Name="Portfolio" EntityType="Self.Portfolio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StockHistory" EntityType="Self.StockHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TransactionLog" EntityType="Self.TransactionLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="v_CurrentPrices" EntityType="Self.v_CurrentPrices" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [v_CurrentPrices].[StockId] AS [StockId], 
+    [v_CurrentPrices].[Symbol] AS [Symbol], 
+    [v_CurrentPrices].[CompanyName] AS [CompanyName], 
+    [v_CurrentPrices].[CurrentPrice] AS [CurrentPrice]
+    FROM [dbo].[v_CurrentPrices] AS [v_CurrentPrices]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Portfolio_Stock" Association="Self.FK_Portfolio_Stock">
       <End Role="Stock" EntitySet="Stock" />
       <End Role="Portfolio" EntitySet="Portfolio" />
@@ -85,6 +127,10 @@
     <AssociationSet Name="FK_Portfolio_User" Association="Self.FK_Portfolio_User">
       <End Role="Users" EntitySet="Users" />
       <End Role="Portfolio" EntitySet="Portfolio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockHistory_Stock" Association="Self.FK_StockHistory_Stock">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="StockHistory" EntitySet="StockHistory" />
     </AssociationSet>
     <AssociationSet Name="FK_TransactionLog_Stock" Association="Self.FK_TransactionLog_Stock">
       <End Role="Stock" EntitySet="Stock" />
