@@ -25,6 +25,9 @@ namespace Portfolio_Manager.Data
 
             Mapper.CreateMap<Model.Portfolio, Portfolio>();
             Mapper.CreateMap<Portfolio, Model.Portfolio>();
+
+            Mapper.CreateMap<Model.StockHistory, StockHistory>();
+            Mapper.CreateMap<StockHistory, Model.StockHistory>();
         }
         
     }

@@ -64,7 +64,8 @@ namespace Portfolio.UI.Controllers
         }
         public JsonResult UpdateStock(int id, string symbol, string companyName, double price)
         {
-            try {
+            try
+            {
                 _factory.StockRepository.UpdateStock(new Stock()
                 {
                     ID = id,

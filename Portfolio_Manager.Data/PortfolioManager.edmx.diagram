@@ -12,6 +12,9 @@
         <EntityTypeShape EntityType="PortfolioAppModel.User" Width="1.5" PointX="0.75" PointY="0.75" />
         <AssociationConnector Association="PortfolioAppModel.FK_Portfolio_Stock" />
         <AssociationConnector Association="PortfolioAppModel.FK_Portfolio_User" />
+        <EntityTypeShape EntityType="PortfolioAppModel.StockHistory" Width="1.5" PointX="10.875" PointY="0.875" />
+        <EntityTypeShape EntityType="PortfolioAppModel.v_CurrentPrices" Width="1.5" PointX="0.75" PointY="3.75" />
+        <AssociationConnector Association="PortfolioAppModel.FK_StockHistory_Stock" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

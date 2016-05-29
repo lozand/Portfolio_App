@@ -29,5 +29,7 @@ namespace Portfolio_Manager.Data
         public virtual DbSet<TransactionLog> TransactionLogs { get; set; }
         public virtual DbSet<Portfolio> Portfolios { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<StockHistory> StockHistories { get; set; }
+        public virtual DbSet<v_CurrentPrices> v_CurrentPrices { get; set; }
     }
 }

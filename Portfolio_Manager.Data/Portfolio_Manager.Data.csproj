@@ -59,6 +59,9 @@
     <Compile Include="PortfolioAppFactory.cs" />
     <Compile Include="PortfolioRepository.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="StockHistory.cs">
+      <DependentUpon>PortfolioManager.tt</DependentUpon>
+    </Compile>
     <Compile Include="StockRepository.cs" />
     <Compile Include="Portfolio.cs">
       <DependentUpon>PortfolioManager.tt</DependentUpon>
@@ -90,6 +93,9 @@
       <DependentUpon>PortfolioManager.tt</DependentUpon>
     </Compile>
     <Compile Include="UserRepository.cs" />
+    <Compile Include="v_CurrentPrices.cs">
+      <DependentUpon>PortfolioManager.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="PortfolioManager.edmx">

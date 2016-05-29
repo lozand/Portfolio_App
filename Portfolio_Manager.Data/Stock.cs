@@ -19,6 +19,7 @@ namespace Portfolio_Manager.Data
         {
             this.TransactionLogs = new HashSet<TransactionLog>();
             this.Portfolios = new HashSet<Portfolio>();
+            this.StockHistories = new HashSet<StockHistory>();
         }
     
         public int ID { get; set; }
@@ -30,5 +31,7 @@ namespace Portfolio_Manager.Data
         public virtual ICollection<TransactionLog> TransactionLogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Portfolio> Portfolios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StockHistory> StockHistories { get; set; }
     }
 }

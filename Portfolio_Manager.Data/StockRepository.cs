@@ -10,9 +10,11 @@ namespace Portfolio_Manager.Data
     public class StockRepository
     {
         PortfolioAppEntities dbContext;
+        PortfolioAppFactory _factory;
 
         public StockRepository(PortfolioAppEntities context)
         {
+            _factory = new PortfolioAppFactory();
             dbContext = context;
         }
         #region Basic Crud Methods
@@ -40,6 +42,11 @@ namespace Portfolio_Manager.Data
 
         public void DeleteStock(int id)
         {
+            var stockHistories = dbContext.StockHistories.Where(h => h.StockId == id);
+            foreach(var history in stockHistories)
+            {
+                _factory.StockHistoryRepository.Delete(history.Id);
+            }
             var stock = dbContext.Stocks.Where(s => s.ID == id).FirstOrDefault();
             dbContext.Entry(stock).State = System.Data.Entity.EntityState.Deleted;
             dbContext.SaveChanges();
@@ -52,7 +59,7 @@ namespace Portfolio_Manager.Data
             {
                 return dbContext.Stocks.ToList().Where(s => s.Symbol == symbol.ToUpper()).Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).FirstOrDefault();
             }
-            catch(Exception ex)
+            catch
             {
                 return new Model.Stock();
             }
