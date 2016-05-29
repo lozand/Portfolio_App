@@ -58,7 +58,7 @@ namespace Portfolio_Manager.Data
         
         public List<Model.Portfolio> GetPortfolio()
         {
-            return Factory.PortfolioRepository.GetPortfoio();
+            return Factory.PortfolioRepository.Get();
         }
 
         public double GetPortfolioValue()

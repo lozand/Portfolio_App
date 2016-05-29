@@ -5,17 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using Portfolio.UI.Auth;
 using Portfolio_Manager.Model;
-using Portfolio_Manager.Data;
 using User = Portfolio_Manager.Model.User;
+using Portfolio.Core;
 
 namespace Portfolio.UI.Controllers
 {
     public class UserController : Controller
     {
-        PortfolioAppFactory _factory;
+        PortfolioCore _core;
         public UserController()
         {
-            _factory = new PortfolioAppFactory();
+            _core = new PortfolioCore();
         }
         public ActionResult Index()
         {
@@ -33,7 +33,7 @@ namespace Portfolio.UI.Controllers
 
             if(userId != 0)
             {
-                user = _factory.UserRepository.GetUsers().Where(u => u.Id == userId).FirstOrDefault();
+                user = _core.GetUsers().Where(u => u.Id == userId).FirstOrDefault();
                 user.IsSignedIn = true;
             }
             return Json(user, JsonRequestBehavior.AllowGet);

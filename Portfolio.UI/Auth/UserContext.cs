@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Portfolio_Manager.Data;
 using Portfolio_Manager.Model;
+using Portfolio.Core;
 
 namespace Portfolio.UI.Auth
 {
@@ -11,11 +11,11 @@ namespace Portfolio.UI.Auth
     {
         private static UserContext _instance;
         private int _userId = 0;
-        private PortfolioAppFactory _factory;
+        private PortfolioCore _core;
 
         private UserContext()
         {
-            _factory = new PortfolioAppFactory();
+            _core = new PortfolioCore();
         }
 
         public static UserContext Instance
@@ -51,15 +51,15 @@ namespace Portfolio.UI.Auth
         {
             if (_userId == 0)
             {
-                var user = _factory.UserRepository.GetUsers().Where(u => u.Name == name).FirstOrDefault();
+                var user = _core.GetUsers().Where(u => u.Name == name).FirstOrDefault();
                 if (user == null)
                 {
-                    _factory.UserRepository.CreateUser(new Portfolio_Manager.Model.User()
+                    _core.CreateUser(new Portfolio_Manager.Model.User()
                     {
                         CashValue = 0,
                         Name = name
                     });
-                    user = _factory.UserRepository.GetUsers().Where(u => u.Name == name).FirstOrDefault();
+                    user = _core.GetUsers().Where(u => u.Name == name).FirstOrDefault();
                 }
                 _userId = user.Id;
             }

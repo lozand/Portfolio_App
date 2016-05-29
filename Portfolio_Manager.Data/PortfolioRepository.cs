@@ -15,7 +15,7 @@ namespace Portfolio_Manager.Data
             dbContext = context;
         }
         #region Basic Crud Methods
-        public List<Model.Portfolio> GetPortfoio()
+        public List<Model.Portfolio> Get()
         {
             var hi = dbContext.Portfolios.ToList();
             var there = hi.Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p));

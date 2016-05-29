@@ -4,19 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Portfolio_Manager.Model;
-using Portfolio_Manager.Data;
-using Stock = Portfolio_Manager.Model.Stock;
+using Portfolio.Core;
 using System.Net;
 
 namespace Portfolio.UI.Controllers
 {
     public class StockController : Controller
     {
-        PortfolioAppFactory _factory;
+        PortfolioCore _core;
 
         public StockController()
         {
-            _factory = new PortfolioAppFactory();
+            _core = new PortfolioCore();
         }
 
         #region Views
@@ -39,18 +38,18 @@ namespace Portfolio.UI.Controllers
         #region Json Methods
         public JsonResult Get()
         {
-            return Json(_factory.StockRepository.GetStocks(), JsonRequestBehavior.AllowGet);
+            return Json(_core.GetStocks(), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetById(int id)
         {
-            return Json(_factory.StockRepository.GetStocks().Where(s => s.ID == id).FirstOrDefault(), JsonRequestBehavior.AllowGet);
+            return Json(_core.GetStocks().Where(s => s.ID == id).FirstOrDefault(), JsonRequestBehavior.AllowGet);
         }
         public JsonResult AddStock(string symbol, string companyName, double price)
         {
             try
             {
-                _factory.StockRepository.CreateStock(new Stock()
+                _core.CreateStock(new Stock()
                 {
                     CompanyName = companyName,
                     LastPrice = price,
@@ -67,7 +66,7 @@ namespace Portfolio.UI.Controllers
         {
             try
             {
-                _factory.StockRepository.UpdateStock(new Stock()
+                _core.UpdateStock(new Stock()
                 {
                     ID = id,
                     Symbol = symbol,

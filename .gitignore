@@ -11,6 +11,8 @@ Portfolio_Manager.WebForm/bin
 Portfolio_Manager.WebForm/obj
 Portfolio_Manager/bin
 Portfolio_Manager/obj
-Portfolio_Manager.Data/obj/Debug/Portfolio_Manager.Data.csproj.FileListAbsolute.txt
-.vs/Portfolio_Manager/v14/.suo
+Portfolio.Core/obj/
+Portfolio.Core/bin/
 Portfolio.StockPriceService/obj
+Portfolio_Manager.Data/obj
+.vs/Portfolio_Manager/v14/.suo

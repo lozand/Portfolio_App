@@ -1,21 +1,21 @@
-﻿using Portfolio_Manager.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Portfolio.UI.ViewModel;
 using Portfolio.UI.Auth;
+using Portfolio.Core;
 
 namespace Portfolio.UI.Controllers
 {
     public class PortfolioController : Controller
     {
-        PortfolioAppFactory _factory;
+        PortfolioCore _core;
 
         public PortfolioController()
         {
-            _factory = new PortfolioAppFactory();
+            _core = new PortfolioCore();
         }
 
         public ActionResult Index()
@@ -29,9 +29,8 @@ namespace Portfolio.UI.Controllers
             if (userId != 0)
             {
                 List<PortfolioViewModel> vm = new List<PortfolioViewModel>();
-                var hi = _factory.PortfolioRepository.GetPortfoio();
-                var portfolioRecords = hi.Where(p => p.UserId == userId);
-                var stocks = _factory.StockRepository.GetStocks().Where(s => portfolioRecords.Select(p => p.StockId).Contains(s.ID));
+                var portfolioRecords = _core.GetPortfolio().Where(p => p.UserId == userId);
+                var stocks = _core.GetStocks().Where(s => portfolioRecords.Select(p => p.StockId).Contains(s.ID));
                 foreach (var portfolio in portfolioRecords)
                 {
                     var stock = stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
