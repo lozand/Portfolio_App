@@ -13,3 +13,4 @@ Portfolio_Manager/bin
 Portfolio_Manager/obj
 Portfolio_Manager.Data/obj/Debug/Portfolio_Manager.Data.csproj.FileListAbsolute.txt
 .vs/Portfolio_Manager/v14/.suo
+Portfolio.StockPriceService/obj

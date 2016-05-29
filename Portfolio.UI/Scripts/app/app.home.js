@@ -6,10 +6,7 @@ app.home = {
         app.home.getUser();
     },
     bindControls: function () {
-        $('.js-sign-in').on('click', function (e) {
-            e.preventDefault();
-            //app.home.signIn();
-        });
+        // we may not use this since we're using knockout
     },
     signIn: function () {
         app.service.signIn(app.home.user().Name, signInCallback);

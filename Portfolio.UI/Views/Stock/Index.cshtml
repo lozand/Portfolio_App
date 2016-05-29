@@ -10,23 +10,27 @@
     </div>
     <br />
     <div>
-        <table width="400">
+        <table width="450">
             <thead>
                 <tr>
                     <th>Id</th>
                     <th>Stock</th>
                     <th>Symbol</th>
                     <th>Value</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody data-bind="foreach: stock">
                 <tr>
                     <td width="10%" data-bind="text: ID"></td>
                     <td width="20%" data-bind="text: Symbol"></td>
-                    <td width="30%" data-bind="text: CompanyName"></td>
-                    <td width="20%" data-bind="text: LastPrice"></td>
-                    <td width="20%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>
-                    <!--  href="~/Views/Stock/Edit.cshtml"-->
+                    <td width="25%" data-bind="text: CompanyName"></td>
+                    <td width="15%" data-bind="text: LastPrice"></td>
+                    <td width="10%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>
+                    <td width="10%" ><a class="btn btn-success" data-bind="visible: common.isAuthenticated(), click: app.stock.buyStock">Buy</a></td>
+                    <td width="10%" ><a class="btn btn-danger" data-bind="visible: common.isAuthenticated(), click: app.stock.sellStock">Sell</a></td>
                 </tr>
             </tbody>
         </table>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Portfolio_Manager.Model;
 using Portfolio_Manager.Data;
 using Stock = Portfolio_Manager.Model.Stock;
+using System.Net;
 
 namespace Portfolio.UI.Controllers
 {
@@ -79,6 +80,11 @@ namespace Portfolio.UI.Controllers
             {
                 return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, ex.Message), JsonRequestBehavior.AllowGet);
             }
+        }
+
+        public void RetreiveStockPrices()
+        {
+            
         }
 
         #endregion

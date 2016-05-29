@@ -46,5 +46,10 @@ namespace Portfolio.UI.Controllers
             }
             return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "You need to be signed in to use this page"), JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult BuyStock(int stockId, int quantity)
+        {
+
+        }
     }
 }
