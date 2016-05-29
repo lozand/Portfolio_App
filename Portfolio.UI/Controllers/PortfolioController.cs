@@ -29,7 +29,8 @@ namespace Portfolio.UI.Controllers
             if (userId != 0)
             {
                 List<PortfolioViewModel> vm = new List<PortfolioViewModel>();
-                var portfolioRecords = _factory.PortfolioRepository.GetPortfoio().Where(p => p.UserId == userId);
+                var hi = _factory.PortfolioRepository.GetPortfoio();
+                var portfolioRecords = hi.Where(p => p.UserId == userId);
                 var stocks = _factory.StockRepository.GetStocks().Where(s => portfolioRecords.Select(p => p.StockId).Contains(s.ID));
                 foreach (var portfolio in portfolioRecords)
                 {
