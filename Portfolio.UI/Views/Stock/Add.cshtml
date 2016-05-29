@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Add";
+}
+<h2>Edit</h2>
+<button class="btn btn-default navigate-back">Back to Stocks</button>
+<p></p>
+<div id="stockadd" class="content-container">
+    <div data-bind="with: app.stockadd.stock">
+        @Html.Partial("_StockArea")
+    </div>
+    <div class="row">
+        <div class="left">
+            <button class="btn btn-primary save-stock">Save</button>
+        </div>
+    </div>
+</div>
+

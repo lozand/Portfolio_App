@@ -5,10 +5,12 @@ app.util = {
         var container = $('.content-container')[0];
         var vmName = container.id;
         ko.applyBindings(app[vmName]);
-        app[vmName].index();
+        app[vmName].index($context);
     }
 };
 
-$(function () {
+
+$(document).ready(function(){ 
+//$(function () {
     app.util.init($('body'));
 });

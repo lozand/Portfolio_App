@@ -28,6 +28,11 @@ namespace Portfolio.UI.Controllers
         {
             return View();
         }
+
+        public ActionResult Add()
+        {
+            return View();
+        }
         #endregion
 
         #region Json Methods
@@ -40,8 +45,24 @@ namespace Portfolio.UI.Controllers
         {
             return Json(_factory.StockRepository.GetStocks().Where(s => s.ID == id).FirstOrDefault(), JsonRequestBehavior.AllowGet);
         }
-
-        public JsonResult SaveStock(int id, string symbol, string companyName, double price)
+        public JsonResult AddStock(string symbol, string companyName, double price)
+        {
+            try
+            {
+                _factory.StockRepository.CreateStock(new Stock()
+                {
+                    CompanyName = companyName,
+                    LastPrice = price,
+                    Symbol = symbol
+                });
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.OK), JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, ex.Message), JsonRequestBehavior.AllowGet);
+            }
+        }
+        public JsonResult UpdateStock(int id, string symbol, string companyName, double price)
         {
             try {
                 _factory.StockRepository.UpdateStock(new Stock()

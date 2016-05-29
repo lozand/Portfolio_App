@@ -5,7 +5,8 @@ app.service = {
         getMe: '/Home/GetMe',
         getStocks: '/Stock/Get',
         getStockById: '/Stock/GetById',
-        saveStock: '/Stock/SaveStock'
+        updateStock: '/Stock/UpdateStock',
+        addStock: '/Stock/AddStock'
     },
     getMe: function (data, isAsync, callback) {
         app.service.callController(data, isAsync, callback, app.service._urls.getMe);
@@ -17,16 +18,23 @@ app.service = {
         var data = { id: id };
         app.service.callController(data, false, callback, app.service._urls.getStockById);
     },
-    saveStock: function(id, symbol, companyName, price, callback){
+    updateStock: function(id, symbol, companyName, price, callback){
         var data = { id: id, symbol: symbol, companyName: companyName, price: price };
-        app.service.callController(data, false, callback, app.service._urls.saveStock);
+        app.service.callController(data, false, callback, app.service._urls.updateStock);
+    },
+    addStock: function (symbol, companyName, price, callback) {
+        var data = { symbol: symbol, companyName: companyName, price: price };
+        app.service.callController(data, false, callback, app.service._urls.addStock);
     },
     callController: function (data, isAsync, callback, url) {
         $.ajax({
             url: url,
             async: isAsync,
             data: data,
-            cache: false
+            cache: false,
+            error: function (xhr, ajaxOptions, thrownError) {
+                message.error(thrownError + '. Please try again later.');
+            }
         }).then(function (data) {
             if (callback) {
                 callback(data);

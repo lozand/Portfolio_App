@@ -9,6 +9,9 @@ app.stockedit = {
         $('.save-stock').on('click', function (e) {
             app.stockedit.saveStock();
         });
+        $('.delete-stock').on('click', function (e) {
+            app.stockedit.deleteStock();
+        });
         $('.navigate-back').on('click', function (e) {
             common.navigateBack();
         });
@@ -37,9 +40,12 @@ app.stockedit = {
     navigateBack: function(){
 
     },
+    deleteStock: function () {
+        var stock = app.stockedit.stock();
+    },
     saveStock: function () {
         var stock = app.stockedit.stock();
-        app.service.saveStock(stock.ID, stock.Symbol, stock.CompanyName, stock.LastPrice, writeMessage);
+        app.service.updateStock(stock.ID, stock.Symbol, stock.CompanyName, stock.LastPrice, writeMessage);
 
         function writeMessage(data) {
             if (data.StatusCode === 200) {

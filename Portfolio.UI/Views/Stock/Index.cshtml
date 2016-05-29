@@ -5,8 +5,12 @@
     <h2>@ViewBag.Title</h2>
     <h3>@ViewBag.Message</h3>
     <br />
+    <div class="right">
+        <a class="btn btn-primary" data-bind="attr: {href: '/Stock/Add'}">Add a Stock</a>
+    </div>
+    <br />
     <div>
-        <table>
+        <table width="400">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -17,11 +21,11 @@
             </thead>
             <tbody data-bind="foreach: stock">
                 <tr>
-                    <td data-bind="text: ID"></td>
-                    <td data-bind="text: Symbol"></td>
-                    <td data-bind="text: CompanyName"></td>
-                    <td data-bind="text: LastPrice"></td>
-                    <td><a class="link-button" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>
+                    <td width="10%" data-bind="text: ID"></td>
+                    <td width="20%" data-bind="text: Symbol"></td>
+                    <td width="30%" data-bind="text: CompanyName"></td>
+                    <td width="20%" data-bind="text: LastPrice"></td>
+                    <td width="20%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>
                     <!--  href="~/Views/Stock/Edit.cshtml"-->
                 </tr>
             </tbody>
