@@ -10,12 +10,12 @@ namespace Portfolio_Manager.Data
     public class StockRepository
     {
         PortfolioAppEntities dbContext;
-        PortfolioAppFactory _factory;
+        StockHistoryRepository _stockHistoryRepostitory;
 
         public StockRepository(PortfolioAppEntities context)
         {
-            _factory = new PortfolioAppFactory();
             dbContext = context;
+            _stockHistoryRepostitory = new StockHistoryRepository(context);
         }
         #region Basic Crud Methods
         public List<Model.Stock> GetStocks()
@@ -45,7 +45,7 @@ namespace Portfolio_Manager.Data
             var stockHistories = dbContext.StockHistories.Where(h => h.StockId == id);
             foreach(var history in stockHistories)
             {
-                _factory.StockHistoryRepository.Delete(history.Id);
+                _stockHistoryRepostitory.Delete(history.Id);
             }
             var stock = dbContext.Stocks.Where(s => s.ID == id).FirstOrDefault();
             dbContext.Entry(stock).State = System.Data.Entity.EntityState.Deleted;

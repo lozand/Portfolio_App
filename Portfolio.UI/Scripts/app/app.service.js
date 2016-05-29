@@ -6,7 +6,8 @@ app.service = {
         getStocks: '/Stock/Get',
         getStockById: '/Stock/GetById',
         updateStock: '/Stock/UpdateStock',
-        addStock: '/Stock/AddStock'
+        addStock: '/Stock/AddStock',
+        getPortfolio: '/Portfolio/GetPortfolio'
     },
     getMe: function (data, isAsync, callback) {
         app.service.callController(data, isAsync, callback, app.service._urls.getMe);
@@ -17,6 +18,10 @@ app.service = {
     getStockById: function(id, callback){
         var data = { id: id };
         app.service.callController(data, false, callback, app.service._urls.getStockById);
+    },
+    getPortfolio: function(userId, callback){
+        var data = { userId: userId };
+        app.service.callController(data, false, callback, app.service._urls.getPortfolio)
     },
     updateStock: function(id, symbol, companyName, price, callback){
         var data = { id: id, symbol: symbol, companyName: companyName, price: price };

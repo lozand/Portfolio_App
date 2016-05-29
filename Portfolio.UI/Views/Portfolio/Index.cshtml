@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Your Portfolio</h2>
+
+<br />
+<div id="portfolio" class="content-container">
+    <table width="400">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: portfolio">
+            <tr>
+                <td width="10%" data-bind="text: Symbol"></td>
+                <td width="20%" data-bind="text: Price"></td>
+                <td width="30%" data-bind="text: Quantity"></td>
+                <td width="40%" data-bind="text: Total"></td>
+                @*<td width="20%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>*@
+            </tr>
+        </tbody>
+    </table>
+</div>

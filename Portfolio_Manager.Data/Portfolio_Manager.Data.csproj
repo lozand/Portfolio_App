@@ -62,6 +62,7 @@
     <Compile Include="StockHistory.cs">
       <DependentUpon>PortfolioManager.tt</DependentUpon>
     </Compile>
+    <Compile Include="StockHistoryRepository.cs" />
     <Compile Include="StockRepository.cs" />
     <Compile Include="Portfolio.cs">
       <DependentUpon>PortfolioManager.tt</DependentUpon>

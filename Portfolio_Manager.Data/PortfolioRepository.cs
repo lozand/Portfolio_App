@@ -17,7 +17,7 @@ namespace Portfolio_Manager.Data
         #region Basic Crud Methods
         public List<Model.Portfolio> GetPortfoio()
         {
-            return dbContext.Portfolios.Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p)).ToList();
+            return dbContext.Portfolios.ToList().Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p)).ToList();
         }
 
         public void CreatePortfolioEntry(Model.Portfolio entity)

@@ -137,6 +137,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\PortfolioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -150,6 +151,7 @@
     <Content Include="Scripts\app\app.about.js" />
     <Content Include="Scripts\app\app.home.js" />
     <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\app.portfolio.js" />
     <Content Include="Scripts\app\app.service.js" />
     <Content Include="Scripts\app\app.stock.js" />
     <Content Include="Scripts\app\app.stockadd.js" />
@@ -194,11 +196,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Portfolio.cshtml" />
     <Content Include="Views\Stock\Index.cshtml" />
     <Content Include="Views\Stock\Edit.cshtml" />
     <Content Include="Views\Stock\_StockArea.cshtml" />
     <Content Include="Views\Stock\Add.cshtml" />
+    <Content Include="Views\Portfolio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
