@@ -6,8 +6,9 @@ message = {
         toastr.success(text);
     },
     error: function (text) {
+        var errorText = text || "An error occurred. Please try again later.";
         message.setOptions();
-        toastr.error(text);
+        toastr.error(errorText);
     },
     info: function (text) {
         message.setOptions();
@@ -23,8 +24,8 @@ message = {
             "debug": false,
             "newestOnTop": false,
             "progressBar": false,
-            //"positionClass": "toast-top-full-width",
-            "positionClass": "toast-top-center",
+            "positionClass": "toast-top-full-width",
+            //"positionClass": "toast-top-center",
             "preventDuplicates": false,
             "onclick": null,
             "showDuration": "300",

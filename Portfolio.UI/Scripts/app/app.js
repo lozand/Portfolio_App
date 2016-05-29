@@ -10,7 +10,7 @@ app.util = {
 };
 
 
-$(document).ready(function(){ 
+$(window).load(function(){ 
 //$(function () {
     app.util.init($('body'));
 });

@@ -1,0 +1,5 @@
+D:\Libraries\Documents\Projects\Portfolio_Manager\Database\bin\Debug\Portfolio.Database.dacpac
+D:\Libraries\Documents\Projects\Portfolio_Manager\Database\bin\Debug\Database.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Database\bin\Debug\Database.pdb
+D:\Libraries\Documents\Projects\Portfolio_Manager\Database\obj\Debug\Database.dll
+D:\Libraries\Documents\Projects\Portfolio_Manager\Database\obj\Debug\Database.pdb

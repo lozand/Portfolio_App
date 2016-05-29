@@ -11,5 +11,6 @@ namespace Portfolio_Manager.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public double CashValue { get; set; }
+        public bool IsSignedIn { get; set; }
     }
 }

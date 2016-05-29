@@ -9,10 +9,15 @@ app.portfolio = {
 
     },
     getPortfolio: function () {
-        app.service.getPortfolio(2, getPortfolioCallback);
+        app.service.getPortfolio(getPortfolioCallback);
 
         function getPortfolioCallback(data) {
-            app.portfolio.portfolio(data);
+            if (!data) {
+                message.error();
+            }
+            else {
+                app.portfolio.portfolio(data);
+            }
         }
     },
     portfolio: ko.observableArray()

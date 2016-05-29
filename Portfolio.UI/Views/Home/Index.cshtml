@@ -8,19 +8,33 @@
         <p><a href="https://github.com/lozand/Portfolio_App" class="btn btn-primary btn-lg">Source Code &raquo;</a></p>
     </div>
 
-    @*<div class="row">
+    <div class="row" data-bind="with: app.home.user">
         <div class="col-md-4">
-            <a class="btn btn-default js-say-hi">Learn more &raquo;</a></p>
+            <div data-bind="visible: !IsSignedIn">
+                <label>Please enter your name to sign in</label>
+                <br />
+                <input data-bind="value: Name" />
+                <p></p>
+                <a class="btn btn-default js-sign-in" data-bind="click: app.home.signIn">Sign In &raquo;</a>
+            </div>
+            <div data-bind="visible: IsSignedIn">
+                <label>You are signed in as</label>
+                <br />
+                <label data-bind="text: Name"></label>
+                <p></p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-    </div>*@
+        @*
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+        *@
+    </div>
 </div>

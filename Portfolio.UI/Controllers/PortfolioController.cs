@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Portfolio.UI.ViewModel;
+using Portfolio.UI.Auth;
 
 namespace Portfolio.UI.Controllers
 {
@@ -22,23 +23,28 @@ namespace Portfolio.UI.Controllers
             return View();
         }
 
-        public JsonResult GetPortfolio(int userId)
+        public JsonResult GetPortfolio()
         {
-            List<PortfolioViewModel> vm = new List<PortfolioViewModel>();
-            var portfolioRecords = _factory.PortfolioRepository.GetPortfoio().Where(p => p.UserId == userId);
-            var stocks = _factory.StockRepository.GetStocks().Where(s => portfolioRecords.Select(p => p.StockId).Contains(s.ID));
-            foreach(var portfolio in portfolioRecords)
+            int userId = UserContext.Instance.UserId;
+            if (userId != 0)
             {
-                var stock = stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
-                PortfolioViewModel v = new PortfolioViewModel()
+                List<PortfolioViewModel> vm = new List<PortfolioViewModel>();
+                var portfolioRecords = _factory.PortfolioRepository.GetPortfoio().Where(p => p.UserId == userId);
+                var stocks = _factory.StockRepository.GetStocks().Where(s => portfolioRecords.Select(p => p.StockId).Contains(s.ID));
+                foreach (var portfolio in portfolioRecords)
                 {
-                    Price = stock.LastPrice,
-                    Quantity = portfolio.Quantity,
-                    Symbol = stock.Symbol
-                };
-                vm.Add(v);
+                    var stock = stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
+                    PortfolioViewModel v = new PortfolioViewModel()
+                    {
+                        Price = stock.LastPrice,
+                        Quantity = portfolio.Quantity,
+                        Symbol = stock.Symbol
+                    };
+                    vm.Add(v);
+                }
+                return Json(vm, JsonRequestBehavior.AllowGet);
             }
-            return Json(vm, JsonRequestBehavior.AllowGet);
+            return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "User was not signed in"), JsonRequestBehavior.AllowGet);
         }
     }
 }
