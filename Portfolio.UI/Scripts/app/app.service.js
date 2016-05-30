@@ -18,6 +18,14 @@ app.service = (function () {
         var data = { name: name };
         app.service.callController(data, false, callback, urls.signIn);
     },
+    buyStock = function (stockId, quantity, callback) {
+        var data = { stockId: stockId, quantity: quantity };
+        app.service.callController(data, false, callback, urls.buyStock);
+    },
+    sellStock = function (stockId, quantity, callback) {
+        var data = { stockId: stockId, quantity: quantity };
+        app.service.callController(data, false, callback, urls.sellStock);
+    },
     getUser = function (callback) {
         app.service.callController({}, false, callback, urls.getUser);
     },
@@ -59,6 +67,8 @@ app.service = (function () {
     };
 
     return {
+        buyStock: buyStock,
+        sellStock: sellStock,
         signIn: signIn,
         getUser: getUser,
         getMe: getMe,

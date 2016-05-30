@@ -31,8 +31,8 @@ namespace Portfolio_Manager.Data
             {
                 var moneyToRemove = quantity * stock.LastPrice;
                 Factory.PortfolioRepository.BuyPortfolioEntry(portfolio);
-                Factory.UserRepository.UpdateCashValue(UserId, -1 * moneyToRemove);
-                Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, true);
+                Factory.UserRepository.AddCashValue(UserId, -1 * moneyToRemove);
+                //Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, true);
             }
             else
             {
@@ -52,8 +52,8 @@ namespace Portfolio_Manager.Data
             };
             var moneyToAdd = quantity * stock.LastPrice;
             Factory.PortfolioRepository.SellPortfolioEntry(portfolio);
-            Factory.UserRepository.UpdateCashValue(UserId, moneyToAdd);
-            Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, false);
+            Factory.UserRepository.AddCashValue(UserId, moneyToAdd);
+            //Factory.TransactionLogRepository.CreateTransactionLogs(portfolio, stock, false);
         }
         
         public List<Model.Portfolio> GetPortfolio()

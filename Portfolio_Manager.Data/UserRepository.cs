@@ -55,7 +55,7 @@ namespace Portfolio_Manager.Data
             return user.CashValue.Value;
         }
 
-        public void UpdateCashValue(int userId, double value)
+        public void AddCashValue(int userId, double value)
         {
             var user = dbContext.Users.ToList().Where(s => s.ID == userId).Select(Mapper.Map<User, Model.User>).FirstOrDefault();
             user.CashValue += value;

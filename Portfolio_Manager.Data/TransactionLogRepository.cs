@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Portfolio_Manager.Model.Enum;
 
 
 namespace Portfolio_Manager.Data
@@ -21,11 +22,13 @@ namespace Portfolio_Manager.Data
             return dbContext.TransactionLogs.Select(p => Mapper.Map<Data.TransactionLog, Model.TransactionLog>(p)).ToList();
         }
 
-        public void CreateTransactionLogs(Model.Portfolio portfolio, Model.Stock stock, bool purchased)
+        public void CreateTransactionLogs(Model.Portfolio portfolio, StockAction stockAction)
         {
+            var stock = dbContext.Stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
+            bool purchased = stockAction == StockAction.Bought ? true : false;
             Model.TransactionLog entity = new Model.TransactionLog
             {
-                Price = stock.LastPrice,
+                Price = stock.LastPrice.Value,
                 StockId = stock.ID,
                 Purchased = purchased,
                 Quantity = portfolio.Quantity,

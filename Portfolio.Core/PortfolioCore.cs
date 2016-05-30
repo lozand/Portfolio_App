@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Portfolio_Manager.Data;
 using Portfolio_Manager.Model;
+using Portfolio_Manager.Model.Enum;
 using Stock = Portfolio_Manager.Model.Stock;
 using User = Portfolio_Manager.Model.User;
 
@@ -26,13 +27,23 @@ namespace Portfolio.Core
 
         public void BuyStock(int userId, int stockId, int quantity)
         {
-            // check to see if the user has enough cash tho
+            var money = _factory.UserRepository.GetCashValueByUserId(userId);
+            var cost = _factory.StockRepository.GetStockById(stockId).LastPrice * quantity;
 
-            // if they do, add the stock to the portfolio
+            if (money >= cost)
+            {
+                Portfolio_Manager.Model.Portfolio portfolio = new Portfolio_Manager.Model.Portfolio()
+                {
+                    Quantity = quantity,
+                    StockId = stockId,
+                    UserId = userId
+                };
+                _factory.PortfolioRepository.BuyPortfolioEntry(portfolio);
 
-            // subract the amount from their cash
+                _factory.UserRepository.AddCashValue(userId, -1 * cost);
 
-            // update the transaction log
+                _factory.TransactionLogRepository.CreateTransactionLogs(portfolio, StockAction.Bought);
+            }
         }
 
         public void SellStock(int userId, int stockId, int quantity)

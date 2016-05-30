@@ -65,5 +65,17 @@ namespace Portfolio_Manager.Data
             }
         }
 
+        public Model.Stock GetStockById(int stockId)
+        {
+            try
+            {
+                return dbContext.Stocks.ToList().Where(s => s.ID == stockId).Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).FirstOrDefault();
+            }
+            catch
+            {
+                return new Model.Stock();
+            }
+        }
+
     }
 }

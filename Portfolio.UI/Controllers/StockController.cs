@@ -90,13 +90,19 @@ namespace Portfolio.UI.Controllers
         public void BuyStock(int stockId, int quantity)
         {
             int userId = UserContext.Instance.UserId;
-            _core.BuyStock(userId, stockId, quantity);
+            if (userId > 0)
+            {
+                _core.BuyStock(userId, stockId, quantity);
+            }
         }
 
         public void SellStock(int stockId, int quantity)
         {
             int userId = UserContext.Instance.UserId;
-            _core.SellStock(userId, stockId, quantity);
+            if (userId > 0)
+            {
+                _core.SellStock(userId, stockId, quantity);
+            }
         }
 
         #endregion
