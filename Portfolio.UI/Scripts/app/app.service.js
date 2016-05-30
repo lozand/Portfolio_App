@@ -24,8 +24,9 @@ app.service = {
     getStocks: function (callback) {
         app.service.callController({}, false, callback, app.service._urls.getStocks);
     },
-    getStockById: function(callback){
-        app.service.callController({}, false, callback, app.service._urls.getStockById);
+    getStockById: function (id, callback) {
+        var data = { id: id };
+        app.service.callController(data, false, callback, app.service._urls.getStockById);
     },
     getPortfolio: function(callback){
         app.service.callController({}, false, callback, app.service._urls.getPortfolio)
