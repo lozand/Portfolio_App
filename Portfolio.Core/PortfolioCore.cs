@@ -8,7 +8,6 @@ using Portfolio_Manager.Model;
 using Stock = Portfolio_Manager.Model.Stock;
 using User = Portfolio_Manager.Model.User;
 
-
 namespace Portfolio.Core
 {
     public class PortfolioCore
@@ -23,6 +22,31 @@ namespace Portfolio.Core
         public List<Stock> GetStocks()
         {
             return _factory.StockRepository.GetStocks();
+        }
+
+        public void BuyStock(int userId, int stockId, int quantity)
+        {
+            // check to see if the user has enough cash tho
+
+            // if they do, add the stock to the portfolio
+
+            // subract the amount from their cash
+
+            // update the transaction log
+        }
+
+        public void SellStock(int userId, int stockId, int quantity)
+        {
+            // remove the stock from the portfolio
+
+            // add the proceeds to their cash
+
+            // update the transaction log
+        }
+
+        public double GetPortfolioValue(int userId)
+        {
+            return _factory.PortfolioRepository.GetPortfolioValue(userId);
         }
 
         public void CreateStock(Stock stock)

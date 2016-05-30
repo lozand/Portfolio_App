@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Portfolio_Manager.Model;
+using Portfolio.UI.Auth;
 using Portfolio.Core;
 using System.Net;
 
@@ -84,6 +85,18 @@ namespace Portfolio.UI.Controllers
         public void RetreiveStockPrices()
         {
             
+        }
+
+        public void BuyStock(int stockId, int quantity)
+        {
+            int userId = UserContext.Instance.UserId;
+            _core.BuyStock(userId, stockId, quantity);
+        }
+
+        public void SellStock(int stockId, int quantity)
+        {
+            int userId = UserContext.Instance.UserId;
+            _core.SellStock(userId, stockId, quantity);
         }
 
         #endregion

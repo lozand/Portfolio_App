@@ -45,6 +45,10 @@ namespace Portfolio_Manager.Data
         }
         #endregion  
 
+        public List<Model.Portfolio> GetPortfolioByUserId(int userId)
+        {
+            return dbContext.Portfolios.Where(p => p.UserId == userId).Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p)).ToList();
+        }
         public double GetPortfolioValue(int userId)
         {
             var portfolio = dbContext.Portfolios.Where(p => p.UserId == userId);
