@@ -20,30 +20,11 @@ namespace Portfolio.UI.Controllers
             return View();
         }
 
-        public ActionResult Portfolio()
-        {
-            ViewBag.Message = "Your Portfolio page";
-
-            return View();
-        }
-
-        public ActionResult Stock()
-        {
-            ViewBag.Message = "Your Stock Page";
-
-            return View();
-        }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
-        }
-
-        public string GetMe()
-        {
-            return "you got me";
         }
     }
 }

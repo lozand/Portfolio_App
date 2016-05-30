@@ -16,3 +16,4 @@ Portfolio.Core/bin/
 Portfolio.StockPriceService/obj
 Portfolio_Manager.Data/obj
 .vs/Portfolio_Manager/v14/.suo
+Database/Portfolio.Database.dbmdl
