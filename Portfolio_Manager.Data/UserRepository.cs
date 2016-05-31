@@ -48,7 +48,7 @@ namespace Portfolio_Manager.Data
         public double GetCashValueByUserId(int userId)
         {
             var user = dbContext.Users.Where(s => s.ID == userId).FirstOrDefault();
-            if(user == null)
+            if(user == null && !user.CashValue.HasValue)
             {
                 return 0;
             }
