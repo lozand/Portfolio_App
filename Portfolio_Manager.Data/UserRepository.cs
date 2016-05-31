@@ -33,6 +33,7 @@ namespace Portfolio_Manager.Data
             User user = dbContext.Users.Where(s => s.ID == entity.Id).FirstOrDefault();
 
             user.Name = entity.Name;
+            user.CashValue = entity.CashValue;
 
             dbContext.SaveChanges();
         }

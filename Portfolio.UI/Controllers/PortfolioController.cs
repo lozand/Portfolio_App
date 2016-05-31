@@ -28,23 +28,37 @@ namespace Portfolio.UI.Controllers
             int userId = UserContext.Instance.UserId;
             if (userId != 0)
             {
-                List<PortfolioViewModel> vm = new List<PortfolioViewModel>();
+                PortfolioViewModel viewModel = new PortfolioViewModel();
+                List<PortfolioStockViewModel> folio = new List<PortfolioStockViewModel>();
                 var portfolioRecords = _core.GetPortfolio().Where(p => p.UserId == userId);
                 var stocks = _core.GetStocks().Where(s => portfolioRecords.Select(p => p.StockId).Contains(s.ID));
                 foreach (var portfolio in portfolioRecords)
                 {
                     var stock = stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
-                    PortfolioViewModel v = new PortfolioViewModel()
+                    PortfolioStockViewModel v = new PortfolioStockViewModel()
                     {
                         Price = stock.LastPrice,
                         Quantity = portfolio.Quantity,
                         Symbol = stock.Symbol
                     };
-                    vm.Add(v);
+                    viewModel.Folio.Add(v);
                 }
-                return Json(vm, JsonRequestBehavior.AllowGet);
+                viewModel.FolioValue = _core.GetPortfolioValue(userId);
+                viewModel.UserCash = _core.GetUserCash(userId);
+                return Json(viewModel, JsonRequestBehavior.AllowGet);
             }
             return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "You need to be signed in to use this page"), JsonRequestBehavior.AllowGet);
         }
+
+        //public JsonResult GetPortfolioValue()
+        //{
+        //    int userId = UserContext.Instance.UserId;
+        //    if(userId != 0)
+        //    {
+        //        var portfolioValue = _core.GetPortfolioValue(userId);
+        //        return Json(portfolioValue, JsonRequestBehavior.AllowGet);
+        //    }
+        //    return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError), "You need to be signed in");
+        //}
     }
 }

@@ -17,9 +17,13 @@ app.portfolio = {
                 message.error(msg);
             }
             else {
-                app.portfolio.portfolio(data);
+                app.portfolio.portfolio(data.Folio);
+                app.portfolio.availableCash(data.UserCash);
+                app.portfolio.portfolioValue(data.FolioValue);
             }
         }
     },
+    availableCash: ko.observable(),
+    portfolioValue: ko.observable(),
     portfolio: ko.observableArray()
 };

@@ -74,6 +74,16 @@ namespace Portfolio.Core
             return _factory.PortfolioRepository.GetPortfolioValue(userId);
         }
 
+        public double GetUserCash(int userId)
+        {
+            return _factory.UserRepository.GetCashValueByUserId(userId);
+        }
+
+        public void AddCashToUser(int userId, double value)
+        {
+            _factory.UserRepository.AddCashValue(userId, value);
+        }
+
         public void CreateStock(Stock stock)
         {
             _factory.StockRepository.CreateStock(stock);

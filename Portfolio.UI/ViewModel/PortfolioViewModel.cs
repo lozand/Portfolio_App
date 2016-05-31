@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Portfolio_Manager.Model;
 
 namespace Portfolio.UI.ViewModel
 {
     public class PortfolioViewModel
     {
-        public string Symbol { get; set; }
-        public double Price { get; set; }
-        public int Quantity { get; set; }
-        public double Total
+        public PortfolioViewModel()
         {
-            get
-            {
-                return Price * Quantity;
-            }
+            Folio = new List<PortfolioStockViewModel>();
         }
+        public List<PortfolioStockViewModel> Folio { get; set; }
+        public double FolioValue { get; set; }
+        public double UserCash { get; set; }
     }
 }

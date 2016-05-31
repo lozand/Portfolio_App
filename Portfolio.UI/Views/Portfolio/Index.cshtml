@@ -3,11 +3,12 @@
     ViewBag.Title = "Index";
     //Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Your Portfolio</h2>
-
-<br />
 <div id="portfolio" class="content-container">
+    <h2>Your Portfolio</h2>
+    <h1>Portfolio Value: <span data-bind="text: portfolioValue"></span></h1>
+    <h2>Remaining Cash: $<span data-bind="text: availableCash"></span></h2>
+    <br />
+
     <table width="400">
         <thead>
             <tr>
