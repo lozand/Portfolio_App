@@ -87,21 +87,37 @@ namespace Portfolio.UI.Controllers
             
         }
 
-        public void BuyStock(int stockId, int quantity)
+        public JsonResult BuyStock(int stockId, int quantity)
         {
-            int userId = UserContext.Instance.UserId;
-            if (userId > 0)
+            try
             {
-                _core.BuyStock(userId, stockId, quantity);
+                int userId = UserContext.Instance.UserId;
+                if (userId > 0)
+                {
+                    _core.BuyStock(userId, stockId, quantity);
+                }
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.OK, "Stock successfully purchased!"), JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "Stock could not be purchased at this time. Please try again later."), JsonRequestBehavior.AllowGet);
             }
         }
 
-        public void SellStock(int stockId, int quantity)
+        public JsonResult SellStock(int stockId, int quantity)
         {
-            int userId = UserContext.Instance.UserId;
-            if (userId > 0)
+            try
             {
-                _core.SellStock(userId, stockId, quantity);
+                int userId = UserContext.Instance.UserId;
+                if (userId > 0)
+                {
+                    _core.SellStock(userId, stockId, quantity);
+                }
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.OK, "Stock successfully sold!"), JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "Stock could not be sold at this time. Please try again later."), JsonRequestBehavior.AllowGet);
             }
         }
 

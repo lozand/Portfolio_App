@@ -37,5 +37,13 @@ message = {
             "showMethod": "slideDown",
             "hideMethod": "fadeOut"
         }
+    },
+    basicCallback: function (data) {
+        if (data.StatusCode === 200) {
+            message.success(data.StatusDescription);
+        }
+        else {
+            message.error(data.StatusDescription)
+        }
     }
 }

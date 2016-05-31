@@ -67,6 +67,10 @@ namespace Portfolio.Core
 
                 _factory.TransactionLogRepository.CreateTransactionLogs(entry, StockAction.Sold);
             }
+            else
+            {
+
+            }
         }
 
         public double GetPortfolioValue(int userId)
