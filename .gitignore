@@ -1,6 +1,7 @@
 *.dll
 *.pdb
 *.cache
+*.dacpac
 Portfolio_Manager/bin/Debug/EntityFramework.xml
 Platform.xml
 Portfolio.UI/bin/
