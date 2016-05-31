@@ -47,7 +47,7 @@ namespace Portfolio_Manager.Data
 
         public List<Model.Portfolio> GetPortfolioByUserId(int userId)
         {
-            return dbContext.Portfolios.Where(p => p.UserId == userId).Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p)).ToList();
+            return dbContext.Portfolios.ToList().Where(p => p.UserId == userId).Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p)).ToList();
         }
         public double GetPortfolioValue(int userId)
         {
@@ -63,7 +63,7 @@ namespace Portfolio_Manager.Data
 
         public void BuyPortfolioEntry(Model.Portfolio entity)
         {
-            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.StockId).FirstOrDefault();
+            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)
             {
                 CreatePortfolioEntry(entity);
@@ -78,21 +78,24 @@ namespace Portfolio_Manager.Data
 
         public void SellPortfolioEntry(Model.Portfolio entity)
         {
-            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.StockId).FirstOrDefault();
+            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)
             {
                 //user tries to sell a stock that he/she doesn't own
                 return;
             }
-            if(existingRecord.Quantity > entity.Quantity)
+            if(existingRecord.Quantity == entity.Quantity)
             {
-                entity.Quantity -= existingRecord.Quantity.Value;
+                DeletePortfolioEntry(entity.UserId, entity.StockId);
+            }
+            else if (existingRecord.Quantity > 0)
+            {
+                entity.Quantity = existingRecord.Quantity.Value - entity.Quantity;
                 UpdatePortfolioQuantity(entity);
             }
-            else if(existingRecord.Quantity <= entity.Quantity)
+            else 
             {
-                // if a user tries to sell more than he/she owns, we'll just sell as much as they have.
-                DeletePortfolioEntry(entity.UserId, entity.StockId);
+                //user tried to sell more than they have
             }
         }
     }

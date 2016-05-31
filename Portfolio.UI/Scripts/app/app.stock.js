@@ -14,9 +14,11 @@ app.stock = (function () {
     },
     buyStock = function (data) {
         var stockId = data.ID;
+        app.service.buyStock(stockId, 1, function () { });
     },
     sellStock = function (data) {
         var stockId = data.ID;
+        app.service.sellStock(stockId, 1, function () { });
     },
     getStocksCallback = function (data) {
         stock(data);

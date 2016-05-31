@@ -48,11 +48,25 @@ namespace Portfolio.Core
 
         public void SellStock(int userId, int stockId, int quantity)
         {
-            // remove the stock from the portfolio
+            var currentEntry = _factory.PortfolioRepository.GetPortfolioByUserId(userId).Where(p => p.StockId == stockId).First();
+            if (currentEntry.Quantity >= quantity)
+            {
+                var stock = _factory.StockRepository.GetStockById(stockId);
+                var proceeds = stock.LastPrice * quantity;
 
-            // add the proceeds to their cash
+                Portfolio_Manager.Model.Portfolio entry = new Portfolio_Manager.Model.Portfolio()
+                {
+                    Quantity = quantity,
+                    StockId = stockId,
+                    UserId = userId
+                };
 
-            // update the transaction log
+                _factory.PortfolioRepository.SellPortfolioEntry(entry);
+
+                _factory.UserRepository.AddCashValue(userId, proceeds);
+
+                _factory.TransactionLogRepository.CreateTransactionLogs(entry, StockAction.Sold);
+            }
         }
 
         public double GetPortfolioValue(int userId)
