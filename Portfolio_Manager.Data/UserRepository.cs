@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     public class UserRepository
     {
-        PortfolioAppEntities dbContext;
+        ATFEntities dbContext;
 
-        public UserRepository(PortfolioAppEntities context)
+        public UserRepository(ATFEntities context)
         {
             dbContext = context;
         }

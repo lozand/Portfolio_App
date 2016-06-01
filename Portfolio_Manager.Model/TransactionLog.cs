@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio_Manager.Model
+namespace ATF.Model
 {
     public class TransactionLog
     {

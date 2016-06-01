@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     public class PortfolioAppFactory
     {
-        PortfolioAppEntities dbContext = new PortfolioAppEntities();
+        ATFEntities dbContext = new ATFEntities();
 
         public StockRepository StockRepository;
         public PortfolioRepository PortfolioRepository;

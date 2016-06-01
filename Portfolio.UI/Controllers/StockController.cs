@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Portfolio_Manager.Model;
-using Portfolio.UI.Auth;
-using Portfolio.Core;
+using ATF.Model;
+using ATF.UI.Auth;
+using ATF.Core;
 using System.Net;
 
-namespace Portfolio.UI.Controllers
+namespace ATF.UI.Controllers
 {
     public class StockController : Controller
     {

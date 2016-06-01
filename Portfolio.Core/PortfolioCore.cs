@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Portfolio_Manager.Data;
-using Portfolio_Manager.Model;
-using Portfolio_Manager.Model.Enum;
-using Stock = Portfolio_Manager.Model.Stock;
-using User = Portfolio_Manager.Model.User;
+using ATF.Data;
+using ATF.Model;
+using ATF.Model.Enum;
+using Stock = ATF.Model.Stock;
+using User = ATF.Model.User;
 
-namespace Portfolio.Core
+namespace ATF.Core
 {
     public class PortfolioCore
     {
@@ -32,7 +32,7 @@ namespace Portfolio.Core
 
             if (money >= cost)
             {
-                Portfolio_Manager.Model.Portfolio portfolio = new Portfolio_Manager.Model.Portfolio()
+                ATF.Model.Portfolio portfolio = new ATF.Model.Portfolio()
                 {
                     Quantity = quantity,
                     StockId = stockId,
@@ -54,7 +54,7 @@ namespace Portfolio.Core
                 var stock = _factory.StockRepository.GetStockById(stockId);
                 var proceeds = stock.LastPrice * quantity;
 
-                Portfolio_Manager.Model.Portfolio entry = new Portfolio_Manager.Model.Portfolio()
+                ATF.Model.Portfolio entry = new ATF.Model.Portfolio()
                 {
                     Quantity = quantity,
                     StockId = stockId,
@@ -108,7 +108,7 @@ namespace Portfolio.Core
             _factory.UserRepository.CreateUser(user);
         }
 
-        public List<Portfolio_Manager.Model.Portfolio> GetPortfolio()
+        public List<ATF.Model.Portfolio> GetPortfolio()
         {
             return _factory.PortfolioRepository.Get();
         }

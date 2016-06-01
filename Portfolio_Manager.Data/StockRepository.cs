@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     public class StockRepository
     {
-        PortfolioAppEntities dbContext;
+        ATFEntities dbContext;
         StockHistoryRepository _stockHistoryRepostitory;
 
-        public StockRepository(PortfolioAppEntities context)
+        public StockRepository(ATFEntities context)
         {
             dbContext = context;
             _stockHistoryRepostitory = new StockHistoryRepository(context);

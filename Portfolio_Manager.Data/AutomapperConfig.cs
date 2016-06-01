@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Portfolio_Manager.Model;
-using Portfolio_Manager;
+using ATF.Model;
 using AutoMapper;
 
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     public class AutomapperConfig
     {

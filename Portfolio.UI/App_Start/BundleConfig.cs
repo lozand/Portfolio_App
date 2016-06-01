@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Portfolio.UI
+namespace ATF.UI
 {
     public class BundleConfig
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Portfolio_Manager.Model;
-using Portfolio.Core;
+using ATF.Model;
+using ATF.Core;
 
-namespace Portfolio.UI.Auth
+namespace ATF.UI.Auth
 {
     public class UserContext
     {
@@ -54,7 +54,7 @@ namespace Portfolio.UI.Auth
                 var user = _core.GetUsers().Where(u => u.Name == name).FirstOrDefault();
                 if (user == null)
                 {
-                    _core.CreateUser(new Portfolio_Manager.Model.User()
+                    _core.CreateUser(new ATF.Model.User()
                     {
                         CashValue = 0,
                         Name = name

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Portfolio.UI.ViewModel
+namespace ATF.UI.ViewModel
 {
     public class PortfolioStockViewModel
     {

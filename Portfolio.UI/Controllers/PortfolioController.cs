@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Portfolio.UI.ViewModel;
-using Portfolio.UI.Auth;
-using Portfolio.Core;
+using ATF.UI.ViewModel;
+using ATF.UI.Auth;
+using ATF.Core;
 
-namespace Portfolio.UI.Controllers
+namespace ATF.UI.Controllers
 {
     public class PortfolioController : Controller
     {

@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager", "Portfolio_Manager\Portfolio_Manager.csproj", "{DE764F54-1AE5-4B70-9FDC-0437325536BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.Data", "Portfolio_Manager.Data\ATF.Data.csproj", "{B06EE736-2C3F-4342-B547-389ED5D7AA25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager.Data", "Portfolio_Manager.Data\Portfolio_Manager.Data.csproj", "{B06EE736-2C3F-4342-B547-389ED5D7AA25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.Model", "Portfolio_Manager.Model\ATF.Model.csproj", "{54CF691B-3409-48A1-8CA5-0B174FAD42FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio_Manager.Model", "Portfolio_Manager.Model\Portfolio_Manager.Model.csproj", "{54CF691B-3409-48A1-8CA5-0B174FAD42FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.UI", "Portfolio.UI\ATF.UI.csproj", "{BE37F004-6590-4736-8341-3F157E81522E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.UI", "Portfolio.UI\Portfolio.UI.csproj", "{BE37F004-6590-4736-8341-3F157E81522E}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ATF.Database", "Database\ATF.Database.sqlproj", "{67F34993-845C-498C-BD7B-727D88A38861}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Portfolio.Database", "Database\Portfolio.Database.sqlproj", "{67F34993-845C-498C-BD7B-727D88A38861}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.StockPriceService", "Portfolio.StockPriceService\ATF.StockPriceService.csproj", "{E7EDECA7-C127-4B73-9239-40FF4B3212A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.StockPriceService", "Portfolio.StockPriceService\Portfolio.StockPriceService.csproj", "{E7EDECA7-C127-4B73-9239-40FF4B3212A1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Core", "Portfolio.Core\Portfolio.Core.csproj", "{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.Core", "Portfolio.Core\ATF.Core.csproj", "{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE764F54-1AE5-4B70-9FDC-0437325536BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE764F54-1AE5-4B70-9FDC-0437325536BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE764F54-1AE5-4B70-9FDC-0437325536BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE764F54-1AE5-4B70-9FDC-0437325536BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B06EE736-2C3F-4342-B547-389ED5D7AA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B06EE736-2C3F-4342-B547-389ED5D7AA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B06EE736-2C3F-4342-B547-389ED5D7AA25}.Release|Any CPU.ActiveCfg = Release|Any CPU

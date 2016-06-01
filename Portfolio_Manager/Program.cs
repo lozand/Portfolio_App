@@ -1,5 +1,5 @@
 ﻿using System;
-using Portfolio_Manager.Model;
+using ATF.Model;
 using System.Collections.Generic;
 
 namespace Portfolio_Manager
@@ -11,7 +11,7 @@ namespace Portfolio_Manager
             Console.WriteLine("Please enter your username to continue");
             string userName = Console.ReadLine();
 
-            Data.Service service = new Data.Service(userName);
+            ATF.Data.Service service = new ATF.Data.Service(userName);
 
             Console.WriteLine("Enter Command");
             string message = Console.ReadLine();

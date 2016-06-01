@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Portfolio_Manager.Model;
+using ATF.Model;
 
-namespace Portfolio.UI.ViewModel
+namespace ATF.UI.ViewModel
 {
     public class PortfolioViewModel
     {

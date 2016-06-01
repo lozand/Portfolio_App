@@ -12,7 +12,7 @@
     <NavigationProperty Name="Portfolios" Relationship="PortfolioAppModel.FK_Portfolio_Stock" FromRole="Stock" ToRole="Portfolio" />
     <NavigationProperty Name="StockHistories" Relationship="PortfolioAppModel.FK_StockHistory_Stock" FromRole="Stock" ToRole="StockHistory" />
   </EntityType>
-  <EntityContainer Name="PortfolioAppEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="ATFEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Stocks" EntityType="Self.Stock" />
     <EntitySet Name="TransactionLogs" EntityType="PortfolioAppModel.TransactionLog" />
     <AssociationSet Name="FK_TransactionLog_Stock" Association="PortfolioAppModel.FK_TransactionLog_Stock">

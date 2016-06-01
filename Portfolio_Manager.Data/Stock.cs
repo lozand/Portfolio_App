@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     using System;
     using System.Collections.Generic;

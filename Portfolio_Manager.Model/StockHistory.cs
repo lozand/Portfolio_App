@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Portfolio_Manager.Model
+namespace ATF.Model
 {
     public class StockHistory
     {

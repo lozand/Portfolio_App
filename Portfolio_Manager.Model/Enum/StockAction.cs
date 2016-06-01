@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Portfolio_Manager.Model.Enum
+namespace ATF.Model.Enum
 {
     public enum StockAction : int
     {

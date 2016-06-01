@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Portfolio.UI</RootNamespace>
-    <AssemblyName>Portfolio.UI</AssemblyName>
+    <RootNamespace>ATF.UI</RootNamespace>
+    <AssemblyName>ATF.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -228,13 +228,13 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.Core\Portfolio.Core.csproj">
+    <ProjectReference Include="..\Portfolio.Core\ATF.Core.csproj">
       <Project>{059b3d18-ac3e-4c6b-9ced-9ccf69ae4d40}</Project>
-      <Name>Portfolio.Core</Name>
+      <Name>ATF.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Portfolio_Manager.Model\Portfolio_Manager.Model.csproj">
+    <ProjectReference Include="..\Portfolio_Manager.Model\ATF.Model.csproj">
       <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
-      <Name>Portfolio_Manager.Model</Name>
+      <Name>ATF.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -22,3 +22,4 @@ Database/Portfolio.Database.dbmdl
 Portfolio_Manager.Data/obj
 Portfolio.UI/Portfolio.UI.csproj.user
 Database/obj
+/Database/ATF.Database.dbmdl

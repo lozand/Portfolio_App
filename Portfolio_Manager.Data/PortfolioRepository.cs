@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
 using System.Linq;
-using Portfolio_Manager.Model;
+using ATF.Model;
 
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     public class PortfolioRepository
     {
-        PortfolioAppEntities dbContext;
+        ATFEntities dbContext;
 
-        public PortfolioRepository(PortfolioAppEntities context)
+        public PortfolioRepository(ATFEntities context)
         {
             dbContext = context;
         }
@@ -24,7 +24,7 @@ namespace Portfolio_Manager.Data
 
         public void CreatePortfolioEntry(Model.Portfolio entity)
         {
-            dbContext.Portfolios.Add(Mapper.Map<Model.Portfolio, Data.Portfolio>(entity));
+            dbContext.Portfolios.Add(Mapper.Map<Model.Portfolio, ATF.Data.Portfolio>(entity));
             dbContext.SaveChanges();
         }
 

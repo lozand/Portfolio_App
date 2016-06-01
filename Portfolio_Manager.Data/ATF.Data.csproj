@@ -7,8 +7,8 @@
     <ProjectGuid>{B06EE736-2C3F-4342-B547-389ED5D7AA25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Portfolio_Manager.Data</RootNamespace>
-    <AssemblyName>Portfolio_Manager.Data</AssemblyName>
+    <RootNamespace>ATF.Data</RootNamespace>
+    <AssemblyName>ATF.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -129,9 +129,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio_Manager.Model\Portfolio_Manager.Model.csproj">
+    <ProjectReference Include="..\Portfolio_Manager.Model\ATF.Model.csproj">
       <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
-      <Name>Portfolio_Manager.Model</Name>
+      <Name>ATF.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

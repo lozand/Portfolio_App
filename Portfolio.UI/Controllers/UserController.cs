@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Portfolio.UI.Auth;
-using Portfolio_Manager.Model;
-using User = Portfolio_Manager.Model.User;
-using Portfolio.Core;
+using ATF.UI.Auth;
+using ATF.Model;
+using User = ATF.Model.User;
+using ATF.Core;
 
-namespace Portfolio.UI.Controllers
+namespace ATF.UI.Controllers
 {
     public class UserController : Controller
     {

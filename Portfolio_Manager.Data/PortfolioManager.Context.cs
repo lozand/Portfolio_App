@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PortfolioAppEntities : DbContext
+    public partial class ATFEntities : DbContext
     {
-        public PortfolioAppEntities()
-            : base("name=PortfolioAppEntities")
+        public ATFEntities()
+            : base("name=ATFEntities")
         {
         }
     

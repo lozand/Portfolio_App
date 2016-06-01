@@ -2,16 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Portfolio_Manager.Model.Enum;
+using ATF.Model.Enum;
 
 
-namespace Portfolio_Manager.Data
+namespace ATF.Data
 {
     public class TransactionLogRepository
     {
-        PortfolioAppEntities dbContext;
+        ATFEntities dbContext;
 
-        public TransactionLogRepository(PortfolioAppEntities context)
+        public TransactionLogRepository(ATFEntities context)
         {
             dbContext = context;
         }
