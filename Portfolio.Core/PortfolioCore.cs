@@ -44,6 +44,11 @@ namespace ATF.Core
 
                 _factory.TransactionLogRepository.CreateTransactionLogs(portfolio, StockAction.Bought);
             }
+            else
+            {
+                //throw custom error
+                throw new Exception();
+            }
         }
 
         public void SellStock(int userId, int stockId, int quantity)
