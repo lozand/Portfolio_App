@@ -5,7 +5,7 @@
 }
 <div id="portfolio" class="content-container">
     <h2>Your Portfolio</h2>
-    <h1>Portfolio Value: <span data-bind="money: portfolioValue"></span></h1>
+    <h1>Portfolio Value: <b><span data-bind="money: portfolioValue"></span></b></h1>
     <h2>Remaining Cash: <span data-bind="money: availableCash"></span></h2>
     <br />
 
@@ -24,7 +24,6 @@
                 <td class="text-right" width="20%" data-bind="money: Price"></td>
                 <td class="text-right" width="30%" data-bind="text: Quantity"></td>
                 <td class="text-right" width="30%" data-bind="money: Total"></td>
-                @*<td width="20%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>*@
             </tr>
         </tbody>
     </table>
