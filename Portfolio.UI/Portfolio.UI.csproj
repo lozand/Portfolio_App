@@ -168,6 +168,7 @@
     <Content Include="Scripts\app\app.stockadd.js" />
     <Content Include="Scripts\app\app.stockedit.js" />
     <Content Include="Scripts\app\common.js" />
+    <Content Include="Scripts\app\knockoutBindings.js" />
     <Content Include="Scripts\app\message.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

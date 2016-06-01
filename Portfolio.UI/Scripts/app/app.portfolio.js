@@ -23,7 +23,7 @@ app.portfolio = {
             }
         }
     },
-    availableCash: ko.observable(),
-    portfolioValue: ko.observable(),
+    availableCash: ko.observable(0),
+    portfolioValue: ko.observable(0),
     portfolio: ko.observableArray()
 };

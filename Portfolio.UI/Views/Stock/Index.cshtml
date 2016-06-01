@@ -16,7 +16,7 @@
                     <th>Id</th>
                     <th>Stock</th>
                     <th>Symbol</th>
-                    <th>Value</th>
+                    <th class="text-right">Value</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -26,8 +26,9 @@
                 <tr>
                     <td width="10%" data-bind="text: ID"></td>
                     <td width="20%" data-bind="text: Symbol"></td>
-                    <td width="25%" data-bind="text: CompanyName"></td>
-                    <td width="15%" data-bind="text: LastPrice"></td>
+                    <td width="20%" data-bind="text: CompanyName"></td>
+                    <td class="text-right" width="15%" data-bind="money: LastPrice"></td>
+                    <td width="5%"></td>
                     <td width="10%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>
                     <td width="10%" ><a class="btn btn-success" data-bind="visible: common.isAuthenticated(), click: app.stock.buyStock">Buy</a></td>
                     <td width="10%" ><a class="btn btn-danger" data-bind="visible: common.isAuthenticated(), click: app.stock.sellStock">Sell</a></td>
