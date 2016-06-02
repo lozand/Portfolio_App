@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ATF.Model;
 using ATF.Data.Interfaces;
+using ATF.Model.Interfaces;
 
 namespace ATF.Data
 {
@@ -15,20 +16,20 @@ namespace ATF.Data
             dbContext = context;
         }
         #region Basic Crud Methods
-        public List<Model.Portfolio> Get()
+        public IEnumerable<IPortfolio> Get()
         {
             var hi = dbContext.Portfolios.ToList();
             var there = hi.Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p));
             return there.ToList();
         }
 
-        public void Create(Model.Portfolio entity)
+        public void Create(IPortfolio entity)
         {
-            dbContext.Portfolios.Add(Mapper.Map<Model.Portfolio, ATF.Data.Portfolio>(entity));
+            dbContext.Portfolios.Add(Mapper.Map<IPortfolio, ATF.Data.Portfolio>(entity));
             dbContext.SaveChanges();
         }
 
-        public void UpdatePortfolioQuantity(Model.Portfolio entity)
+        public void UpdatePortfolioQuantity(IPortfolio entity)
         {
             Portfolio dbportfolio = dbContext.Portfolios.Where(s => s.UserId == entity.UserId && s.StockId == entity.StockId).FirstOrDefault();
 
@@ -45,7 +46,7 @@ namespace ATF.Data
         }
         #endregion  
 
-        public List<Model.Portfolio> GetPortfolioByUserId(int userId)
+        public IEnumerable<IPortfolio> GetPortfolioByUserId(int userId)
         {
             return dbContext.Portfolios.ToList().Where(p => p.UserId == userId).Select(p => Mapper.Map<Data.Portfolio, Model.Portfolio>(p)).ToList();
         }
@@ -61,7 +62,7 @@ namespace ATF.Data
             return 0;
         }
 
-        public void BuyPortfolioEntry(Model.Portfolio entity)
+        public void BuyPortfolioEntry(IPortfolio entity)
         {
             var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)
@@ -76,7 +77,7 @@ namespace ATF.Data
             
         }
 
-        public void SellPortfolioEntry(Model.Portfolio entity)
+        public void SellPortfolioEntry(IPortfolio entity)
         {
             var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)

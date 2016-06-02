@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATF.Model.Interfaces;
 
 namespace ATF.Data.Interfaces
 {
     public interface IUserRepository
     {
-        List<Model.User> GetUsers();
+        IEnumerable<IUser> GetUsers();
 
-        void Create(Model.User user);
+        void Create(IUser user);
 
-        void Update(Model.User user);
+        void Update(IUser user);
 
         void Delete(int userId);
 

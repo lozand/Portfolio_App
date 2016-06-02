@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ATF.Data.Interfaces;
+using ATF.Model.Interfaces;
 
 namespace ATF.Data
 {
@@ -18,18 +19,18 @@ namespace ATF.Data
         }
 
         #region Basic Crud Methods
-        public List<Model.User> GetUsers()
+        public IEnumerable<IUser> GetUsers()
         {
             return dbContext.Users.ToList().Select(p => Mapper.Map<Data.User, Model.User>(p)).ToList();
         }
 
-        public void Create(Model.User entity)
+        public void Create(IUser entity)
         {
-            dbContext.Users.Add(Mapper.Map<Model.User, Data.User>(entity));
+            dbContext.Users.Add(Mapper.Map<IUser, Data.User>(entity));
             dbContext.SaveChanges();
         }
 
-        public void Update(Model.User entity)
+        public void Update(IUser entity)
         {
             User user = dbContext.Users.Where(s => s.ID == entity.Id).FirstOrDefault();
 

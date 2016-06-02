@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ATF.UI.Auth;
-using ATF.Model;
+using ATF.Model.Interfaces;
 using User = ATF.Model.User;
 using ATF.Core;
 
@@ -25,7 +25,7 @@ namespace ATF.UI.Controllers
         public JsonResult GetUser()
         {
             var userId = UserContext.Instance.UserId;
-            User user = new User()
+            IUser user = new User()
             {
                 CashValue = 0,
                 IsSignedIn = false

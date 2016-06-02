@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using ATF.Data;
 using ATF.Model.Enum;
+using ATF.Model.Interfaces;
 using Stock = ATF.Model.Stock;
 using User = ATF.Model.User;
 using Portfolio = ATF.Model.Portfolio;
+using ATF.Data.Interfaces;
 
 namespace ATF.Core
 {
     public class PortfolioCore : IPortfolioCore
     {
-        PortfolioAppFactory _factory;
+        IPortfolioAppFactory _factory;
 
         public PortfolioCore()
         {
             _factory = new PortfolioAppFactory();
         }
 
-        public List<Stock> GetStocks()
+        public IEnumerable<IStock> GetStocks()
         {
-            return _factory.StockRepository.GetStocks();
+            return _factory.StockRepository.Get();
         }
 
         public void BuyStock(int userId, int stockId, int quantity)
@@ -91,27 +93,27 @@ namespace ATF.Core
             _factory.UserRepository.AddCashValue(userId, value);
         }
 
-        public void CreateStock(Stock stock)
+        public void CreateStock(IStock stock)
         {
-            _factory.StockRepository.CreateStock(stock);
+            _factory.StockRepository.Create(stock);
         }
 
-        public void UpdateStock(Stock stock)
+        public void UpdateStock(IStock stock)
         {
-            _factory.StockRepository.UpdateStock(stock);
+            _factory.StockRepository.Update(stock);
         }
 
-        public List<User> GetUsers()
+        public IEnumerable<IUser> GetUsers()
         {
             return _factory.UserRepository.GetUsers();
         }
 
-        public void CreateUser(User user)
+        public void CreateUser(IUser user)
         {
             _factory.UserRepository.Create(user);
         }
 
-        public List<Portfolio> GetPortfolio()
+        public IEnumerable<IPortfolio> GetPortfolio()
         {
             return _factory.PortfolioRepository.Get();
         }

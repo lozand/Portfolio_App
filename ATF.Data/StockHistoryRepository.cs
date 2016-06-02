@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using ATF.Data.Interfaces;
+using ATF.Model.Interfaces;
 
 namespace ATF.Data
 {
@@ -18,18 +19,18 @@ namespace ATF.Data
         }
 
         #region Basic Crud Methods
-        public List<Model.StockHistory> Get()
+        public IEnumerable<IStockHistory> Get()
         {
             return dbContext.StockHistories.ToList().Select(s => Mapper.Map<Data.StockHistory, Model.StockHistory>(s)).ToList();
         }
 
-        public void Add(Model.StockHistory entity)
+        public void Add(IStockHistory entity)
         {
-            dbContext.StockHistories.Add(Mapper.Map<Model.StockHistory, Data.StockHistory>(entity));
+            dbContext.StockHistories.Add(Mapper.Map<IStockHistory, Data.StockHistory>(entity));
             dbContext.SaveChanges();
         }
 
-        public void Update(Model.StockHistory entity)
+        public void Update(IStockHistory entity)
         {
             StockHistory dbStock = dbContext.StockHistories.Where(s => s.Id == entity.Id).FirstOrDefault();
 

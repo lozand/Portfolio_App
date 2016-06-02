@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using ATF.Data.Interfaces;
+using ATF.Model.Interfaces;
 
 namespace ATF.Data
 {
@@ -19,18 +20,18 @@ namespace ATF.Data
             _stockHistoryRepostitory = new StockHistoryRepository(context);
         }
         #region Basic Crud Methods
-        public List<Model.Stock> GetStocks()
+        public IEnumerable<IStock> Get()
         {
             return dbContext.Stocks.ToList().Select(s => Mapper.Map<Data.Stock, Model.Stock>(s)).ToList();
         }
 
-        public void CreateStock(Model.Stock entity)
+        public void Create(IStock entity)
         {
-            dbContext.Stocks.Add(Mapper.Map<Model.Stock, Data.Stock>(entity));
+            dbContext.Stocks.Add(Mapper.Map<IStock, Data.Stock>(entity));
             dbContext.SaveChanges();
         }
 
-        public void UpdateStock(Model.Stock entity)
+        public void Update(IStock entity)
         {
             Stock dbStock = dbContext.Stocks.Where(s => s.ID == entity.ID).FirstOrDefault();
 
@@ -41,7 +42,7 @@ namespace ATF.Data
             dbContext.SaveChanges();
         }
 
-        public void DeleteStock(int id)
+        public void Delete(int id)
         {
             var stockHistories = dbContext.StockHistories.Where(h => h.StockId == id);
             foreach(var history in stockHistories)
@@ -54,7 +55,7 @@ namespace ATF.Data
         }
         #endregion  
 
-        public Model.Stock GetStockBySymbol(string symbol)
+        public IStock GetStockBySymbol(string symbol)
         {
             try
             {
@@ -66,7 +67,7 @@ namespace ATF.Data
             }
         }
 
-        public Model.Stock GetStockById(int stockId)
+        public IStock GetStockById(int stockId)
         {
             try
             {

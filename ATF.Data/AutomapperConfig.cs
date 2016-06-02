@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ATF.Model;
+using ATF.Model.Interfaces;
 using AutoMapper;
 
 
@@ -13,19 +14,19 @@ namespace ATF.Data
     {
         public static void SetMappings()
         {
-            Mapper.CreateMap<Model.Stock, Stock>();
+            Mapper.CreateMap<IStock, Stock>();
             Mapper.CreateMap<Stock, Model.Stock>();
 
-            Mapper.CreateMap<Model.User, User>();
+            Mapper.CreateMap<IUser, User>();
             Mapper.CreateMap<User, Model.User>();
 
-            Mapper.CreateMap<Model.TransactionLog, TransactionLog>();
+            Mapper.CreateMap<ITransactionLog, TransactionLog>();
             Mapper.CreateMap<TransactionLog, Model.TransactionLog>();
 
             Mapper.CreateMap<Model.Portfolio, Portfolio>();
             Mapper.CreateMap<Portfolio, Model.Portfolio>();
 
-            Mapper.CreateMap<Model.StockHistory, StockHistory>();
+            Mapper.CreateMap<IStockHistory, StockHistory>();
             Mapper.CreateMap<StockHistory, Model.StockHistory>();
         }
         

@@ -27,7 +27,7 @@ namespace ATF.Data
         {
             var stock = dbContext.Stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
             bool purchased = stockAction == StockAction.Bought ? true : false;
-            Model.TransactionLog entity = new Model.TransactionLog
+            ITransactionLog entity = new Model.TransactionLog
             {
                 Price = stock.LastPrice.Value,
                 StockId = stock.ID,
@@ -35,7 +35,7 @@ namespace ATF.Data
                 Quantity = portfolio.Quantity,
                 TransactionDate = DateTime.Now
             };
-            dbContext.TransactionLogs.Add(Mapper.Map<Model.TransactionLog, Data.TransactionLog>(entity));
+            dbContext.TransactionLogs.Add(Mapper.Map<ITransactionLog, Data.TransactionLog>(entity));
             dbContext.SaveChanges();
         }
 

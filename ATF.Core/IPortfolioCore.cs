@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ATF.Model;
+using ATF.Model.Interfaces;
 
 namespace ATF.Core
 {
     public interface IPortfolioCore
     {
-        List<Stock> GetStocks();
+        IEnumerable<IStock> GetStocks();
 
         void BuyStock(int userId, int stockId, int quantity);
 
@@ -21,14 +22,14 @@ namespace ATF.Core
 
         void AddCashToUser(int userId, double value);
 
-        void CreateStock(Stock stock);
+        void CreateStock(IStock stock);
 
-        void UpdateStock(Stock stock);
+        void UpdateStock(IStock stock);
 
-        List<User> GetUsers();
+        IEnumerable<IUser> GetUsers();
 
-        void CreateUser(User user);
+        void CreateUser(IUser user);
 
-        List<Portfolio> GetPortfolio();
+        IEnumerable<IPortfolio> GetPortfolio();
     }
 }
