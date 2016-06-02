@@ -19,3 +19,5 @@ ATF.Data/bin
 ATF.UI/Portfolio.UI.csproj.user
 ATF.Database/obj
 ATF.Database/ATF.Database.dbmdl
+/ATF.Database/ATF.Database.sqlproj.user
+/.vs/ATF/v14/.suo
