@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using ATF.Model;
-
+using ATF.Data.Interfaces;
 
 namespace ATF.Data
 {
-    public class PortfolioRepository
+    public class PortfolioRepository : IPortfolioRepository
     {
         ATFEntities dbContext;
 
@@ -22,7 +22,7 @@ namespace ATF.Data
             return there.ToList();
         }
 
-        public void CreatePortfolioEntry(Model.Portfolio entity)
+        public void Create(Model.Portfolio entity)
         {
             dbContext.Portfolios.Add(Mapper.Map<Model.Portfolio, ATF.Data.Portfolio>(entity));
             dbContext.SaveChanges();
@@ -37,7 +37,7 @@ namespace ATF.Data
             dbContext.SaveChanges();
         }
 
-        public void DeletePortfolioEntry(int userId, int stockId)
+        public void Delete(int userId, int stockId)
         {
             var stock = dbContext.Portfolios.Where(s => s.UserId == userId && s.StockId == stockId).FirstOrDefault();
             dbContext.Entry(stock).State = System.Data.Entity.EntityState.Deleted;
@@ -66,7 +66,7 @@ namespace ATF.Data
             var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)
             {
-                CreatePortfolioEntry(entity);
+                Create(entity);
             }
             else
             {
@@ -86,7 +86,7 @@ namespace ATF.Data
             }
             if(existingRecord.Quantity == entity.Quantity)
             {
-                DeletePortfolioEntry(entity.UserId, entity.StockId);
+                Delete(entity.UserId, entity.StockId);
             }
             else if (existingRecord.Quantity > 0)
             {

@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ATF.Model.Enum;
-
+using ATF.Data.Interfaces;
+using ATF.Model.Interfaces;
 
 namespace ATF.Data
 {
-    public class TransactionLogRepository
+    public class TransactionLogRepository : ITransactionLogRepository
     {
         ATFEntities dbContext;
 
@@ -17,12 +18,12 @@ namespace ATF.Data
         }
 
         #region Basic Crud Methods
-        public List<Model.TransactionLog> GetTransactionLogs()
+        public IEnumerable<ITransactionLog> Get()
         {
             return dbContext.TransactionLogs.Select(p => Mapper.Map<Data.TransactionLog, Model.TransactionLog>(p)).ToList();
         }
 
-        public void CreateTransactionLogs(Model.Portfolio portfolio, StockAction stockAction)
+        public void Create(IPortfolio portfolio, StockAction stockAction)
         {
             var stock = dbContext.Stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
             bool purchased = stockAction == StockAction.Bought ? true : false;
@@ -38,7 +39,7 @@ namespace ATF.Data
             dbContext.SaveChanges();
         }
 
-        public void UpdateTransactionLog(Model.TransactionLog entity)
+        public void Update(ITransactionLog entity)
         {
             TransactionLog dbTLog = dbContext.TransactionLogs.Where(s => s.Id == entity.Id).FirstOrDefault();
 
@@ -51,7 +52,7 @@ namespace ATF.Data
             dbContext.SaveChanges();
         }
 
-        public void DeleteTransactionLogEntry(int id)
+        public void Delete(int id)
         {
             var log = dbContext.TransactionLogs.Where(s => s.Id == id).FirstOrDefault();
             dbContext.Entry(log).State = System.Data.Entity.EntityState.Deleted;

@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ATF.Data;
-using ATF.Model;
 using ATF.Model.Enum;
 using Stock = ATF.Model.Stock;
 using User = ATF.Model.User;
+using Portfolio = ATF.Model.Portfolio;
 
 namespace ATF.Core
 {
-    public class PortfolioCore
+    public class PortfolioCore : IPortfolioCore
     {
         PortfolioAppFactory _factory;
 
@@ -32,7 +30,7 @@ namespace ATF.Core
 
             if (money >= cost)
             {
-                ATF.Model.Portfolio portfolio = new ATF.Model.Portfolio()
+                Portfolio portfolio = new Portfolio()
                 {
                     Quantity = quantity,
                     StockId = stockId,
@@ -42,7 +40,7 @@ namespace ATF.Core
 
                 _factory.UserRepository.AddCashValue(userId, -1 * cost);
 
-                _factory.TransactionLogRepository.CreateTransactionLogs(portfolio, StockAction.Bought);
+                _factory.TransactionLogRepository.Create(portfolio, StockAction.Bought);
             }
             else
             {
@@ -59,7 +57,7 @@ namespace ATF.Core
                 var stock = _factory.StockRepository.GetStockById(stockId);
                 var proceeds = stock.LastPrice * quantity;
 
-                ATF.Model.Portfolio entry = new ATF.Model.Portfolio()
+                Portfolio entry = new Portfolio()
                 {
                     Quantity = quantity,
                     StockId = stockId,
@@ -70,7 +68,7 @@ namespace ATF.Core
 
                 _factory.UserRepository.AddCashValue(userId, proceeds);
 
-                _factory.TransactionLogRepository.CreateTransactionLogs(entry, StockAction.Sold);
+                _factory.TransactionLogRepository.Create(entry, StockAction.Sold);
             }
             else
             {
@@ -110,10 +108,10 @@ namespace ATF.Core
 
         public void CreateUser(User user)
         {
-            _factory.UserRepository.CreateUser(user);
+            _factory.UserRepository.Create(user);
         }
 
-        public List<ATF.Model.Portfolio> GetPortfolio()
+        public List<Portfolio> GetPortfolio()
         {
             return _factory.PortfolioRepository.Get();
         }

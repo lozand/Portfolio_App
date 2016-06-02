@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATF.Data.Interfaces;
 
 namespace ATF.Data
 {
-    public class UserRepository
+    public class UserRepository : IUserRepository
     {
         ATFEntities dbContext;
 
@@ -22,13 +23,13 @@ namespace ATF.Data
             return dbContext.Users.ToList().Select(p => Mapper.Map<Data.User, Model.User>(p)).ToList();
         }
 
-        public void CreateUser(Model.User entity)
+        public void Create(Model.User entity)
         {
             dbContext.Users.Add(Mapper.Map<Model.User, Data.User>(entity));
             dbContext.SaveChanges();
         }
 
-        public void UpdateUser(Model.User entity)
+        public void Update(Model.User entity)
         {
             User user = dbContext.Users.Where(s => s.ID == entity.Id).FirstOrDefault();
 
@@ -38,7 +39,7 @@ namespace ATF.Data
             dbContext.SaveChanges();
         }
 
-        public void DeleteUser(int id)
+        public void Delete(int id)
         {
             var user = dbContext.Users.Where(s => s.ID == id).FirstOrDefault();
             dbContext.Entry(user).State = System.Data.Entity.EntityState.Deleted;
@@ -61,7 +62,7 @@ namespace ATF.Data
             var user = dbContext.Users.ToList().Where(s => s.ID == userId).Select(Mapper.Map<User, Model.User>).FirstOrDefault();
             user.CashValue += value;
 
-            UpdateUser(user);
+            Update(user);
         }
     }
 }

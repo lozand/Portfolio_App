@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using ATF.Data.Interfaces;
 
 namespace ATF.Data
 {
-    public class StockHistoryRepository
+    public class StockHistoryRepository : IStockHistoryRepository
     {
         ATFEntities dbContext;
 

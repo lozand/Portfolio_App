@@ -41,6 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\StockAction.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Interfaces\IStockHistory.cs" />
+    <Compile Include="Interfaces\IStock.cs" />
+    <Compile Include="Interfaces\ITransactionLog.cs" />
+    <Compile Include="Interfaces\IPortfolio.cs" />
     <Compile Include="Portfolio.cs" />
     <Compile Include="StockHistory.cs" />
     <Compile Include="User.cs" />

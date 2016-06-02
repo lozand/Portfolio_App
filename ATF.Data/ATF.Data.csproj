@@ -56,9 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutomapperConfig.cs" />
+    <Compile Include="Interfaces\IPortfolioAppFactory.cs" />
+    <Compile Include="Interfaces\IPortfolioRepository.cs" />
+    <Compile Include="Interfaces\IStockHistoryRepository.cs" />
+    <Compile Include="Interfaces\IStockRepository.cs" />
+    <Compile Include="Interfaces\ITransactionLogRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="PortfolioAppFactory.cs" />
     <Compile Include="PortfolioRepository.cs" />
-    <Compile Include="Service.cs" />
     <Compile Include="StockHistory.cs">
       <DependentUpon>PortfolioManager.tt</DependentUpon>
     </Compile>
