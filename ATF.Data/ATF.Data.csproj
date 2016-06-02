@@ -129,7 +129,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio_Manager.Model\ATF.Model.csproj">
+    <ProjectReference Include="..\ATF.Model\ATF.Model.csproj">
       <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
       <Name>ATF.Model</Name>
     </ProjectReference>

@@ -228,11 +228,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.Core\ATF.Core.csproj">
+    <ProjectReference Include="..\ATF.Core\ATF.Core.csproj">
       <Project>{059b3d18-ac3e-4c6b-9ced-9ccf69ae4d40}</Project>
       <Name>ATF.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Portfolio_Manager.Model\ATF.Model.csproj">
+    <ProjectReference Include="..\ATF.Model\ATF.Model.csproj">
       <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
       <Name>ATF.Model</Name>
     </ProjectReference>
