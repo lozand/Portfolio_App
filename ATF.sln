@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.StockPriceService", "AT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.Core", "ATF.Core\ATF.Core.csproj", "{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ATF.MockBrokerDB", "ATF.MockBroker\ATF.MockBrokerDB.sqlproj", "{5716E2F8-64F9-4653-8044-50C07238480B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,12 @@ Global
 		{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5716E2F8-64F9-4653-8044-50C07238480B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5716E2F8-64F9-4653-8044-50C07238480B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5716E2F8-64F9-4653-8044-50C07238480B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5716E2F8-64F9-4653-8044-50C07238480B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5716E2F8-64F9-4653-8044-50C07238480B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5716E2F8-64F9-4653-8044-50C07238480B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

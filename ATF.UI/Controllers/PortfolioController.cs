@@ -49,16 +49,5 @@ namespace ATF.UI.Controllers
             }
             return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "You need to be signed in to use this page"), JsonRequestBehavior.AllowGet);
         }
-
-        //public JsonResult GetPortfolioValue()
-        //{
-        //    int userId = UserContext.Instance.UserId;
-        //    if(userId != 0)
-        //    {
-        //        var portfolioValue = _core.GetPortfolioValue(userId);
-        //        return Json(portfolioValue, JsonRequestBehavior.AllowGet);
-        //    }
-        //    return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError), "You need to be signed in");
-        //}
     }
 }

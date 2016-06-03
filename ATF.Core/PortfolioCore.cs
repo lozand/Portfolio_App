@@ -53,29 +53,37 @@ namespace ATF.Core
 
         public void SellStock(int userId, int stockId, int quantity)
         {
-            var currentEntry = _factory.PortfolioRepository.GetPortfolioByUserId(userId).Where(p => p.StockId == stockId).First();
-            if (currentEntry.Quantity >= quantity)
+            try
             {
-                var stock = _factory.StockRepository.GetStockById(stockId);
-                var proceeds = stock.LastPrice * quantity;
-
-                Portfolio entry = new Portfolio()
+                var currentEntry = _factory.PortfolioRepository.GetPortfolioByUserId(userId).Where(p => p.StockId == stockId).First();
+                if (currentEntry.Quantity >= quantity)
                 {
-                    Quantity = quantity,
-                    StockId = stockId,
-                    UserId = userId
-                };
+                    var stock = _factory.StockRepository.GetStockById(stockId);
+                    var proceeds = stock.LastPrice * quantity;
 
-                _factory.PortfolioRepository.SellPortfolioEntry(entry);
+                    Portfolio entry = new Portfolio()
+                    {
+                        Quantity = quantity,
+                        StockId = stockId,
+                        UserId = userId
+                    };
 
-                _factory.UserRepository.AddCashValue(userId, proceeds);
+                    _factory.PortfolioRepository.SellPortfolioEntry(entry);
 
-                _factory.TransactionLogRepository.Create(entry, StockAction.Sold);
+                    _factory.UserRepository.AddCashValue(userId, proceeds);
+
+                    _factory.TransactionLogRepository.Create(entry, StockAction.Sold);
+                }
+                else
+                {
+                    throw new NotEnoughSharesException();
+                }
             }
-            else
+            catch
             {
                 throw new NotEnoughSharesException();
             }
+           
         }
 
         public double GetPortfolioValue(int userId)
@@ -101,6 +109,13 @@ namespace ATF.Core
         public void UpdateStock(IStock stock)
         {
             _factory.StockRepository.Update(stock);
+            _factory.StockHistoryRepository.Add(new Model.StockHistory()
+            {
+                StockId = stock.ID,
+                IsEod = false,
+                ObservationTime = DateTime.Now,
+                Price = stock.LastPrice
+            });
         }
 
         public IEnumerable<IUser> GetUsers()
