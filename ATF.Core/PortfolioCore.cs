@@ -8,6 +8,7 @@ using Stock = ATF.Model.Stock;
 using User = ATF.Model.User;
 using Portfolio = ATF.Model.Portfolio;
 using ATF.Data.Interfaces;
+using ATF.Model.Exceptions;
 
 namespace ATF.Core
 {
@@ -46,8 +47,7 @@ namespace ATF.Core
             }
             else
             {
-                //throw custom error
-                throw new Exception();
+                throw new NotEnoughCashException();
             }
         }
 
@@ -74,7 +74,7 @@ namespace ATF.Core
             }
             else
             {
-
+                throw new NotEnoughSharesException();
             }
         }
 

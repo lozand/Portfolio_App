@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enum\StockAction.cs" />
+    <Compile Include="Exceptions\NotEnoughCashException.cs" />
+    <Compile Include="Exceptions\NotEnoughSharesException.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Interfaces\IStockHistory.cs" />
     <Compile Include="Interfaces\IStock.cs" />

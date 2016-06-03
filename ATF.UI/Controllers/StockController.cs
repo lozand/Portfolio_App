@@ -60,7 +60,7 @@ namespace ATF.UI.Controllers
             }
             catch(Exception ex)
             {
-                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, ex.Message), JsonRequestBehavior.AllowGet);
+                return GetCustomError(ex.Message);
             }
         }
         public JsonResult UpdateStock(int id, string symbol, string companyName, double price)
@@ -78,7 +78,7 @@ namespace ATF.UI.Controllers
             }
             catch(Exception ex)
             {
-                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, ex.Message), JsonRequestBehavior.AllowGet);
+                return GetCustomError(ex.Message);
             }
         }
 
@@ -100,7 +100,7 @@ namespace ATF.UI.Controllers
             }
             catch(Exception ex)
             {
-                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "Stock could not be purchased at this time. Please try again later."), JsonRequestBehavior.AllowGet);
+                return GetCustomError(ex.Message);
             }
         }
 
@@ -117,10 +117,15 @@ namespace ATF.UI.Controllers
             }
             catch(Exception ex)
             {
-                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "Stock could not be sold at this time. Please try again later."), JsonRequestBehavior.AllowGet);
+                return GetCustomError(ex.Message);
             }
         }
 
         #endregion
+
+        private JsonResult GetCustomError(string message)
+        {
+            return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, message), JsonRequestBehavior.AllowGet);
+        }
     }
 }
