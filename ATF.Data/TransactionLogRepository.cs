@@ -25,12 +25,13 @@ namespace ATF.Data
 
         public void Create(IPortfolio portfolio, StockAction stockAction)
         {
-            var stock = dbContext.Stocks.Where(s => s.ID == portfolio.StockId).FirstOrDefault();
+            var stock = dbContext.Stocks.Where(s => s.Symbol == portfolio.StockSymbol).FirstOrDefault();
             bool purchased = stockAction == StockAction.Bought ? true : false;
             ITransactionLog entity = new Model.TransactionLog
             {
                 Price = stock.LastPrice.Value,
                 StockId = stock.ID,
+                StockSymbol = stock.Symbol,
                 Purchased = purchased,
                 Quantity = portfolio.Quantity,
                 TransactionDate = DateTime.Now
@@ -44,6 +45,7 @@ namespace ATF.Data
             TransactionLog dbTLog = dbContext.TransactionLogs.Where(s => s.Id == entity.Id).FirstOrDefault();
 
             dbTLog.StockId = entity.StockId;
+            dbTLog.StockSymbol = entity.StockSymbol;
             dbTLog.Quantity = entity.Quantity;
             dbTLog.Price = entity.Price;
             dbTLog.Purchased = entity.Purchased;

@@ -31,16 +31,16 @@ namespace ATF.Data
 
         public void UpdatePortfolioQuantity(IPortfolio entity)
         {
-            Portfolio dbportfolio = dbContext.Portfolios.Where(s => s.UserId == entity.UserId && s.StockId == entity.StockId).FirstOrDefault();
+            Portfolio dbportfolio = dbContext.Portfolios.Where(s => s.UserId == entity.UserId && s.StockSymbol == entity.StockSymbol).FirstOrDefault();
 
             dbportfolio.Quantity = entity.Quantity;
 
             dbContext.SaveChanges();
         }
 
-        public void Delete(int userId, int stockId)
+        public void Delete(int userId, string stockSymbol)
         {
-            var stock = dbContext.Portfolios.Where(s => s.UserId == userId && s.StockId == stockId).FirstOrDefault();
+            var stock = dbContext.Portfolios.Where(s => s.UserId == userId && s.StockSymbol == stockSymbol).FirstOrDefault();
             dbContext.Entry(stock).State = System.Data.Entity.EntityState.Deleted;
             dbContext.SaveChanges();
         }
@@ -64,7 +64,7 @@ namespace ATF.Data
 
         public void BuyPortfolioEntry(IPortfolio entity)
         {
-            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
+            var existingRecord = dbContext.Portfolios.Where(p => p.StockSymbol == entity.StockSymbol && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)
             {
                 Create(entity);
@@ -79,7 +79,7 @@ namespace ATF.Data
 
         public void SellPortfolioEntry(IPortfolio entity)
         {
-            var existingRecord = dbContext.Portfolios.Where(p => p.StockId == entity.StockId && p.UserId == entity.UserId).FirstOrDefault();
+            var existingRecord = dbContext.Portfolios.Where(p => p.StockSymbol == entity.StockSymbol && p.UserId == entity.UserId).FirstOrDefault();
             if(existingRecord == null)
             {
                 //user tries to sell a stock that he/she doesn't own
@@ -87,7 +87,7 @@ namespace ATF.Data
             }
             if(existingRecord.Quantity == entity.Quantity)
             {
-                Delete(entity.UserId, entity.StockId);
+                Delete(entity.UserId, entity.StockSymbol);
             }
             else if (existingRecord.Quantity > 0)
             {

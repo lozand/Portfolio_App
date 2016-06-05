@@ -9,6 +9,7 @@ namespace ATF.Model.Interfaces
     public interface IPortfolio
     {
         int StockId { get; set; }
+        string StockSymbol { get; set; }
         int UserId { get; set; }
         int Quantity { get; set; }
     }

@@ -10,6 +10,7 @@ namespace ATF.Model.Interfaces
     {
         int Id { get; set; }
         int StockId { get; set; }
+        string StockSymbol { get; set; }
         int Quantity { get; set; }
         double Price { get; set; }
         bool Purchased { get; set; }

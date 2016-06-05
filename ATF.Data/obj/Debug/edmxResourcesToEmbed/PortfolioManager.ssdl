@@ -8,6 +8,7 @@
     <Property Name="StockId" Type="int" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="Quantity" Type="int" />
+    <Property Name="StockSymbol" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Stock">
     <Key>
@@ -38,6 +39,7 @@
     <Property Name="Price" Type="float" />
     <Property Name="Purchased" Type="bit" />
     <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="StockSymbol" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

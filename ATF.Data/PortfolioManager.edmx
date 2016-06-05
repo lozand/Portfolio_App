@@ -13,6 +13,7 @@
           <Property Name="StockId" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" />
+          <Property Name="StockSymbol" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Stock">
           <Key>
@@ -43,6 +44,7 @@
           <Property Name="Price" Type="float" />
           <Property Name="Purchased" Type="bit" />
           <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="StockSymbol" Type="nvarchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -193,6 +195,7 @@ warning 6002: The table/view 'PortfolioApp.dbo.v_CurrentPrices' does not have a 
           <Property Name="Purchased" Type="Boolean" />
           <Property Name="TransactionDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Stock" Relationship="PortfolioAppModel.FK_TransactionLog_Stock" FromRole="TransactionLog" ToRole="Stock" />
+          <Property Name="StockSymbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK_TransactionLog_Stock">
           <End Type="PortfolioAppModel.Stock" Role="Stock" Multiplicity="0..1" />
@@ -216,6 +219,7 @@ warning 6002: The table/view 'PortfolioApp.dbo.v_CurrentPrices' does not have a 
           <Property Name="Quantity" Type="Int32" />
           <NavigationProperty Name="Stock" Relationship="PortfolioAppModel.FK_Portfolio_Stock" FromRole="Portfolio" ToRole="Stock" />
           <NavigationProperty Name="User" Relationship="PortfolioAppModel.FK_Portfolio_User" FromRole="Portfolio" ToRole="User" />
+          <Property Name="StockSymbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -301,6 +305,7 @@ warning 6002: The table/view 'PortfolioApp.dbo.v_CurrentPrices' does not have a 
           <EntitySetMapping Name="TransactionLogs">
             <EntityTypeMapping TypeName="PortfolioAppModel.TransactionLog">
               <MappingFragment StoreEntitySet="TransactionLog">
+                <ScalarProperty Name="StockSymbol" ColumnName="StockSymbol" />
                 <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
                 <ScalarProperty Name="Purchased" ColumnName="Purchased" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
@@ -313,6 +318,7 @@ warning 6002: The table/view 'PortfolioApp.dbo.v_CurrentPrices' does not have a 
           <EntitySetMapping Name="Portfolios">
             <EntityTypeMapping TypeName="PortfolioAppModel.Portfolio">
               <MappingFragment StoreEntitySet="Portfolio">
+                <ScalarProperty Name="StockSymbol" ColumnName="StockSymbol" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="StockId" ColumnName="StockId" />

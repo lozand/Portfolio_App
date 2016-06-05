@@ -17,6 +17,7 @@ namespace ATF.Data
         public int StockId { get; set; }
         public int UserId { get; set; }
         public Nullable<int> Quantity { get; set; }
+        public string StockSymbol { get; set; }
     
         public virtual Stock Stock { get; set; }
         public virtual User User { get; set; }

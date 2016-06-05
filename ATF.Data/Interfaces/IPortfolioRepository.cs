@@ -15,7 +15,7 @@ namespace ATF.Data.Interfaces
 
         void UpdatePortfolioQuantity(IPortfolio entity);
 
-        void Delete(int userId, int stockId);
+        void Delete(int userId, string stockSymbol);
 
         IEnumerable<IPortfolio> GetPortfolioByUserId(int userId);
 

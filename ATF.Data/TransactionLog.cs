@@ -20,6 +20,7 @@ namespace ATF.Data
         public Nullable<double> Price { get; set; }
         public Nullable<bool> Purchased { get; set; }
         public Nullable<System.DateTime> TransactionDate { get; set; }
+        public string StockSymbol { get; set; }
     
         public virtual Stock Stock { get; set; }
     }

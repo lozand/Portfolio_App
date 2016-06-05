@@ -29,7 +29,9 @@ namespace ATF.Core
         public void BuyStock(int userId, int stockId, int quantity)
         {
             var money = _factory.UserRepository.GetCashValueByUserId(userId);
-            var cost = _factory.StockRepository.GetStockById(stockId).LastPrice * quantity;
+            var stock = _factory.StockRepository.GetStockById(stockId);
+            var cost = stock.LastPrice * quantity;
+            
 
             if (money >= cost)
             {
@@ -37,7 +39,8 @@ namespace ATF.Core
                 {
                     Quantity = quantity,
                     StockId = stockId,
-                    UserId = userId
+                    UserId = userId,
+                    StockSymbol = stock.Symbol
                 };
                 _factory.PortfolioRepository.BuyPortfolioEntry(portfolio);
 
@@ -65,7 +68,8 @@ namespace ATF.Core
                     {
                         Quantity = quantity,
                         StockId = stockId,
-                        UserId = userId
+                        UserId = userId,
+                        StockSymbol = stock.Symbol
                     };
 
                     _factory.PortfolioRepository.SellPortfolioEntry(entry);

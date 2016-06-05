@@ -47,6 +47,7 @@
     <Property Name="Purchased" Type="Boolean" />
     <Property Name="TransactionDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Stock" Relationship="PortfolioAppModel.FK_TransactionLog_Stock" FromRole="TransactionLog" ToRole="Stock" />
+    <Property Name="StockSymbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK_TransactionLog_Stock">
     <End Type="PortfolioAppModel.Stock" Role="Stock" Multiplicity="0..1" />
@@ -70,6 +71,7 @@
     <Property Name="Quantity" Type="Int32" />
     <NavigationProperty Name="Stock" Relationship="PortfolioAppModel.FK_Portfolio_Stock" FromRole="Portfolio" ToRole="Stock" />
     <NavigationProperty Name="User" Relationship="PortfolioAppModel.FK_Portfolio_User" FromRole="Portfolio" ToRole="User" />
+    <Property Name="StockSymbol" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>
