@@ -84,17 +84,10 @@ namespace ATF.UI.Controllers
             }
         }
 
-        public JsonResult DeleteStock(int stockId)
+        public void DeleteStock(int stockId)
         {
-            try
-            {
-                _core.DeleteStock(stockId);
-                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.OK), JsonRequestBehavior.AllowGet);
-            }
-            catch(Exception ex)
-            {
-                return GetCustomError(ex.Message);
-            }
+            _core.DeleteStock(stockId);
+            Response.Redirect("/Stock/Index");
         }
 
         public void RetreiveStockPrices()

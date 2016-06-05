@@ -34,9 +34,6 @@ app.stockedit = {
             }
         }
     },
-    navigateBack: function(){
-
-    },
     deleteStock: function (data) {
         var stockId = data.stock().ID;
         app.service.deleteStock(stockId, message.defaultCallback);
