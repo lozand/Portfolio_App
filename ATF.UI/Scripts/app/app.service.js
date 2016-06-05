@@ -7,6 +7,7 @@ app.service = (function () {
         getStockById: '/Stock/GetById',
         updateStock: '/Stock/UpdateStock',
         addStock: '/Stock/AddStock',
+        deleteStock: '/Stock/DeleteStock',
         getPortfolio: '/Portfolio/GetPortfolio',
         signIn: '/User/SignIn',
         getUser: '/User/GetUser',
@@ -25,6 +26,10 @@ app.service = (function () {
     sellStock = function (stockId, quantity, callback) {
         var data = { stockId: stockId, quantity: quantity };
         callController(data, false, callback, urls.sellStock);
+    },
+    deleteStock = function (stockId, callback) {
+        var data = { stockId: stockId };
+        callController(data, false, callback, urls.deleteStock);
     },
     getUser = function (callback) {
         callController({}, false, callback, urls.getUser);
@@ -69,6 +74,7 @@ app.service = (function () {
     return {
         buyStock: buyStock,
         sellStock: sellStock,
+        deleteStock: deleteStock,
         signIn: signIn,
         getUser: getUser,
         getMe: getMe,

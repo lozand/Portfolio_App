@@ -25,3 +25,4 @@ ATF.Database/Portfolio.Database.dbmdl
 *.suo
 /ATF.MockBroker/ATF.MockBrokerDB.sqlproj.user
 /ATF.MockBroker/Import Schema Logs/ATF.MockBrokerDB_20160603041359.log
+/ATF.MockBroker/obj/Debug/ATF.MockBrokerDB.sqlproj.FileListAbsolute.txt

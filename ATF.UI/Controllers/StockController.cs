@@ -46,6 +46,7 @@ namespace ATF.UI.Controllers
         {
             return Json(_core.GetStocks().Where(s => s.ID == id).FirstOrDefault(), JsonRequestBehavior.AllowGet);
         }
+
         public JsonResult AddStock(string symbol, string companyName, double price)
         {
             try
@@ -63,6 +64,7 @@ namespace ATF.UI.Controllers
                 return GetCustomError(ex.Message);
             }
         }
+
         public JsonResult UpdateStock(int id, string symbol, string companyName, double price)
         {
             try
@@ -74,6 +76,19 @@ namespace ATF.UI.Controllers
                     CompanyName = companyName,
                     LastPrice = price
                 });
+                return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.OK), JsonRequestBehavior.AllowGet);
+            }
+            catch(Exception ex)
+            {
+                return GetCustomError(ex.Message);
+            }
+        }
+
+        public JsonResult DeleteStock(int stockId)
+        {
+            try
+            {
+                _core.DeleteStock(stockId);
                 return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.OK), JsonRequestBehavior.AllowGet);
             }
             catch(Exception ex)
@@ -123,9 +138,13 @@ namespace ATF.UI.Controllers
 
         #endregion
 
+        #region Private Methods
+
         private JsonResult GetCustomError(string message)
         {
             return Json(new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, message), JsonRequestBehavior.AllowGet);
         }
+
+        #endregion
     }
 }

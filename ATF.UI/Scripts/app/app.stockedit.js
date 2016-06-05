@@ -9,9 +9,6 @@ app.stockedit = {
         $('.save-stock').on('click', function (e) {
             app.stockedit.saveStock();
         });
-        $('.delete-stock').on('click', function (e) {
-            app.stockedit.deleteStock();
-        });
         $('.navigate-back').on('click', function (e) {
             common.navigateBack();
         });
@@ -40,8 +37,9 @@ app.stockedit = {
     navigateBack: function(){
 
     },
-    deleteStock: function () {
-        var stock = app.stockedit.stock();
+    deleteStock: function (data) {
+        var stockId = data.stock().ID;
+        app.service.deleteStock(stockId, message.defaultCallback);
     },
     saveStock: function () {
         var stock = app.stockedit.stock();

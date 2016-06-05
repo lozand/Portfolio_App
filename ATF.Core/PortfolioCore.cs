@@ -110,6 +110,11 @@ namespace ATF.Core
             _factory.StockRepository.Create(stock);
         }
 
+        public void DeleteStock(int stockId)
+        {
+            _factory.StockRepository.Delete(stockId);
+        }
+
         public void UpdateStock(IStock stock)
         {
             _factory.StockRepository.Update(stock);
