@@ -5,6 +5,7 @@ app.service = (function () {
         getMe: '/Home/GetMe',
         getStocks: '/Stock/Get',
         getStockById: '/Stock/GetById',
+        getStockBySymbol: '/Stock/GetStockBySymbol',
         updateStock: '/Stock/UpdateStock',
         addStock: '/Stock/AddStock',
         deleteStock: '/Stock/DeleteStock',
@@ -44,6 +45,10 @@ app.service = (function () {
         var data = { id: id };
         callController(data, false, callback, urls.getStockById);
     },
+    getStockBySymbol = function (symbol, callback) {
+        var data = { symbol: symbol };
+        callController(data, false, callback, urls.getStockBySymbol);
+    },
     getPortfolio = function (callback) {
         callController({}, false, callback, urls.getPortfolio)
     },
@@ -80,6 +85,7 @@ app.service = (function () {
         getMe: getMe,
         getStocks: getStocks,
         getStockById: getStockById,
+        getStockBySymbol: getStockBySymbol,
         getPortfolio: getPortfolio,
         updateStock: updateStock,
         addStock: addStock
