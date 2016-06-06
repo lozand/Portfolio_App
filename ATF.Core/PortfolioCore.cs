@@ -9,6 +9,7 @@ using User = ATF.Model.User;
 using Portfolio = ATF.Model.Portfolio;
 using ATF.Data.Interfaces;
 using ATF.Model.Exceptions;
+using ATF.StockAPI;
 
 namespace ATF.Core
 {
@@ -140,6 +141,11 @@ namespace ATF.Core
         public IEnumerable<IPortfolio> GetPortfolio()
         {
             return _factory.PortfolioRepository.Get();
+        }
+
+        public string GetStockBySymbol(string symbol)
+        {
+            return MarketOnDemand.GetStock(symbol);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.Data", "ATF.Data\ATF.Data.csproj", "{B06EE736-2C3F-4342-B547-389ED5D7AA25}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.Core", "ATF.Core\ATF.Core.csproj", "{059B3D18-AC3E-4C6B-9CED-9CCF69AE4D40}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ATF.MockBrokerDB", "ATF.MockBroker\ATF.MockBrokerDB.sqlproj", "{5716E2F8-64F9-4653-8044-50C07238480B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATF.StockAPI", "ATF.StockAPI\ATF.StockAPI.csproj", "{100FCF00-EF55-4DE7-B581-EB8683451B30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{5716E2F8-64F9-4653-8044-50C07238480B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5716E2F8-64F9-4653-8044-50C07238480B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5716E2F8-64F9-4653-8044-50C07238480B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{100FCF00-EF55-4DE7-B581-EB8683451B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{100FCF00-EF55-4DE7-B581-EB8683451B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{100FCF00-EF55-4DE7-B581-EB8683451B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{100FCF00-EF55-4DE7-B581-EB8683451B30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

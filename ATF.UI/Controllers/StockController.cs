@@ -84,6 +84,11 @@ namespace ATF.UI.Controllers
             }
         }
 
+        public JsonResult GetStockBySymbol(string symbol)
+        {
+            return Json(_core.GetStockBySymbol(symbol), JsonRequestBehavior.AllowGet);
+        }
+
         public void DeleteStock(int stockId)
         {
             _core.DeleteStock(stockId);
