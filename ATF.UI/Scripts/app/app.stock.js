@@ -29,8 +29,12 @@ app.stock = (function () {
         }
         
         function assignStockData(apiData) {
-            if (apiData.indexOf('Try another symbol') === -1) {
+            var tooManyRequests = 'Request blockedExceeded requests/sec limit.'
+            if (apiData.indexOf('Try another symbol') === -1 && apiData.indexOf(tooManyRequests) === -1) {
                 stock.push(JSON.parse(apiData));
+            } else if (apiData.indexOf(tooManyRequests) !== -1) {
+                message.error('Too many stock api calls / second');
+                setTimeout(function () { }, 3000);
             }
             //stock.push(apiData);
         }

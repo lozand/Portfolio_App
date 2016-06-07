@@ -31,7 +31,7 @@
                     <td class="text-right" width="10%" data-bind="money: LastPrice"></td>
                     <td class="text-right" width="20%" data-bind="text: parseFloat(Math.round(ChangePercent * 100) / 100).toFixed(2);"></td>
                     <td width="5%"></td>
-                    <td width="5%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + Symbol }">Edit</a></td>
+                    <td width="5%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + Symbol }">Details</a></td>
                     @*<td width="10%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>*@
                     <td width="5%" ><a class="btn btn-success" data-bind="visible: common.isAuthenticated(), click: app.stock.buyStock">Buy</a></td>
                     <td width="5%" ><a class="btn btn-danger" data-bind="visible: common.isAuthenticated(), click: app.stock.sellStock">Sell</a></td>

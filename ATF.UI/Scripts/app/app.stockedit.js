@@ -15,10 +15,10 @@ app.stockedit = {
     },
     getStock: function () {
         var id = getStockId();
-        app.service.getStockById(id, assignStock);
+        app.service.getStockBySymbol(id, assignStock);
 
         function assignStock(data) {
-            app.stockedit.stock(data);
+            app.stockedit.stock(JSON.parse(data));
         }
 
         function getStockId() {
@@ -26,7 +26,7 @@ app.stockedit = {
             {
                 var url = window.location.href;
                 var urlArray = url.split('/');
-                return parseInt(urlArray[urlArray.length - 1],10);
+                return urlArray[urlArray.length - 1].toString();
             }
             catch(err)
             {
