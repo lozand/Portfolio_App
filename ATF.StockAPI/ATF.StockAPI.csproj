@@ -57,9 +57,16 @@
     <Compile Include="GoogleStockApi.cs" />
     <Compile Include="MarketOnDemand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YahooStockApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATF.Model\ATF.Model.csproj">
+      <Project>{54cf691b-3409-48a1-8ca5-0b174fad42fd}</Project>
+      <Name>ATF.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

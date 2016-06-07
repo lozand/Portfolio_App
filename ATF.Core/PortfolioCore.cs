@@ -144,9 +144,11 @@ namespace ATF.Core
         }
 
         public string GetStockBySymbol(string symbol)
+        //public Stock GetStockBySymbol(string symbol)
         {
             return MarketOnDemand.GetStock(symbol);
             //return GoogleStockApi.GetStockPrice(symbol);
+            //return YahooStockApi.GetStockPriceBySymbol(symbol);
         }
     }
 }

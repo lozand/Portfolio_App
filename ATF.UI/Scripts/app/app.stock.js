@@ -32,6 +32,7 @@ app.stock = (function () {
             if (apiData.indexOf('Try another symbol') === -1) {
                 stock.push(JSON.parse(apiData));
             }
+            //stock.push(apiData);
         }
     },
     getUser = function () {
