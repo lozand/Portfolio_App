@@ -23,17 +23,17 @@ app.stock = (function () {
         app.service.sellStock(stockId, 1, message.basicCallback);
     },
     getStocksCallback = function (data) {
-        stock(data);
-        //for (var i = 0; i < data.length; i++) {
-        //    app.service.getStockBySymbol(data[i].Symbol, assignStockData);
-        //}
+        //stock(data);
+        for (var i = 0; i < data.length; i++) {
+            app.service.getStockBySymbol(data[i].Symbol, assignStockData);
+        }
         
-        //function assignStockData(apiData) {
-        //    if (apiData.indexOf('Try another symbol') === -1) {
-        //        stock.push(JSON.parse(apiData));
-        //    }
-        //    //stock.push(apiData);
-        //}
+        function assignStockData(apiData) {
+            if (apiData.indexOf('Try another symbol') === -1) {
+                stock.push(JSON.parse(apiData));
+            }
+            //stock.push(apiData);
+        }
     },
     getUser = function () {
         app.service.getUser(getUserCallback);
