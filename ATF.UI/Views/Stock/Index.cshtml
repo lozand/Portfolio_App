@@ -26,9 +26,10 @@
                 <tr>
                     @*<td width="10%" data-bind="text: ID"></td>*@
                     <td width="10%" data-bind="text: Symbol"></td>
-                    <td width="40%" data-bind="text: Name"></td>
+                    <td width="40%" data-bind="text: CompanyName"></td>
+                    @*<td width="40%" data-bind="text: Name"></td>*@
                     <td class="text-right" width="10%" data-bind="money: LastPrice"></td>
-                    <td class="text-right" width="20%" data-bind="text: parseFloat(Math.round(ChangePercent * 100) / 100).toFixed(2);"></td>
+                    @*<td class="text-right" width="20%" data-bind="text: parseFloat(Math.round(ChangePercent * 100) / 100).toFixed(2);"></td>*@
                     <td width="5%"></td>
                     <td width="5%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + Symbol }">Edit</a></td>
                     @*<td width="10%"><a class="btn btn-default" data-bind="attr: { href: '/Stock/Edit/' + ID }">Edit</a></td>*@
