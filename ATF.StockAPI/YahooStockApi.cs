@@ -14,6 +14,7 @@ namespace ATF.StockAPI
             string csvData;
             using (WebClient web = new WebClient())
             {
+                // Can do a comma-separated list here;
                 csvData = web.DownloadString("http://finance.yahoo.com/d/quotes.csv?s=" + symbol +"&f=snbaopl1");
             }
             List<Price> prices = Parse(csvData);

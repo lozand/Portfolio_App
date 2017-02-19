@@ -66,4 +66,7 @@
     <Build Include="dbo\Tables\bStock.sql" />
     <Build Include="dbo\Tables\bStockHistory.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="CompareToDev.scmp" />
+  </ItemGroup>
 </Project>

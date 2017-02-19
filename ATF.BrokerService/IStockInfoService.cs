@@ -18,6 +18,9 @@ namespace StockInfoService
 
         [OperationContract]
         StockDetail GetStockDetail(string stockSymbol);
+
+        [OperationContract]
+        void AddStock(string stockSymbol, string companyName, string description);
     }
 
 

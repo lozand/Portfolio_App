@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ATF.BrokerService</RootNamespace>
-    <AssemblyName>ATF.BrokerService</AssemblyName>
+    <RootNamespace>StockInfoService</RootNamespace>
+    <AssemblyName>StockInfoService</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="Models\StockInfo.cs" />
     <Compile Include="Models\StockDetail.cs" />
+    <Compile Include="StockInfoCore.cs" />
+    <Compile Include="StockInfoData.cs" />
     <Compile Include="StockInfoService.svc.cs">
       <DependentUpon>StockInfoService.svc</DependentUpon>
     </Compile>
@@ -77,6 +79,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\Test.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
